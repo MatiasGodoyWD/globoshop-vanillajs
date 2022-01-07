@@ -1,0 +1,40 @@
+.home__card {
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 20rem;
+  height: 30rem;
+  background-color: red;
+  margin: 0 auto;
+  margin-top: 3rem;
+  border-radius: 1rem;
+}
+
+.home__card__product {
+  height: 75%;
+  width: 100%;
+  border-radius: 1rem 1rem 0rem 0rem;
+}
+.home__card__info {
+  width: 100%;
+  background-color: var(--primary-white);
+  height: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 0rem 0rem 1rem 1rem;
+}
+
+.home__card__info-title {
+  color: var(--primary-black);
+  font-size: 1.4rem;
+  font-weight: 600;
+  padding: 1rem;
+}
+
+.home__card__info-price {
+  color: var(--primary-gray);
+  padding: 0.5rem;
+  font-weight: 400;
+}

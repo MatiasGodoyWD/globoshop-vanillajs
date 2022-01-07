@@ -16,11 +16,11 @@
   padding: 0.4rem 2rem;
   align-items: center;
 
-  font-size: 0.8rem;
+  font-size: 0.6rem;
 }
 
 @media (min-width: 300px) and (max-width: 640px) {
-  @media (min-width: 300px) and (max-width: 345px) {
+  @media (min-width: 300px) and (max-width: 360px) {
     .hero__title {
       text-align: center;
     }
