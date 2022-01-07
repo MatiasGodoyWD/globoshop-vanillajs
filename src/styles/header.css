@@ -4,12 +4,12 @@
   align-items: center;
   flex-direction: column;
   height: 9rem;
-  background-color: #fff;
+  background-color: var(--primary-white);
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
 .logo__navbar {
-  background-color: #fff;
+  background-color: var(--primary-white);
   display: flex;
   align-items: center;
   position: sticky;
@@ -27,6 +27,8 @@
   width: 80%;
   color: var(--primary-red);
   padding: 0rem 1rem;
+  position: relative;
+  background-color: var(--primary-white);
 }
 
 .navbar__menu ul {
@@ -50,7 +52,71 @@
   width: 35%;
 }
 
-.navbar__logo {
+.navbar__logo,
+.navbar__slogan {
   height: 60%;
   /* background-color: rebeccapurple; */
+}
+
+#navbar__bars {
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: none;
+}
+
+@media (min-width: 300px) and (max-width: 640px) {
+  .navbar__menu {
+    width: 100%;
+    padding: 0rem 1rem;
+  }
+
+  #navbar__bars {
+    display: block;
+  }
+  .navbar__navigation {
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 4rem;
+    background-color: var(--primary-white);
+    padding: 1.5rem 0rem;
+    transform: translateX(-200%);
+    transition: var(--animation);
+    -moz-transition: var(--animation);
+    -webkit-transition: var(--animation);
+  }
+  .navbar__social {
+    width: 28%;
+  }
+  .navbar__slogan {
+    display: none;
+  }
+  .logo__navbar {
+    justify-content: center;
+  }
+  .navbar__link {
+    padding: 0.5rem 0rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--animation);
+    -moz-transition: var(--animation);
+    -webkit-transition: var(--animation);
+  }
+  .navbar__navigation .navbar__link:hover {
+    color: var(--primary-white);
+    background-color: var(--primary-red);
+    transition: var(--animation);
+    -moz-transition: var(--animation);
+    -webkit-transition: var(--animation);
+  }
+  .navbar__active {
+    transform: translateX(0%);
+    transition: var(--animation);
+    -moz-transition: var(--animation);
+    -webkit-transition: var(--animation);
+  }
 }

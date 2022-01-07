@@ -10,12 +10,12 @@ ${items.map((item) => item).join("")}
 </ul>`;
 };
 
-const NavbarImg = (src, alt) => {
+const NavbarImg = (className, src, alt) => {
   return `        
     <img
     src=${src}
     alt=${alt}
-    class="navbar__logo"
+    class="${className}"
   />
   `;
 };
@@ -26,12 +26,23 @@ const NavbarLink = (href, content) => {
     `;
 };
 
+const BarsMenu = () => {
+  return `
+<i id="navbar__bars" class="fas fa-bars"></i>
+ `;
+};
+
 const logoNavbarItems = [
-  NavbarImg("../src/img/GLOBOSHOP.png", "Globoshop store"),
-  NavbarImg("../src/img/slogan2.png", "Siempre en el mismo barrio"),
+  NavbarImg("navbar__logo", "../src/img/GLOBOSHOP.png", "Globoshop store"),
+  NavbarImg(
+    "navbar__slogan",
+    "../src/img/slogan2.png",
+    "Siempre en el mismo barrio"
+  ),
 ];
 
 const navbarMenu = [
+  BarsMenu(),
   NavbarItems("navbar__navigation", [
     NavbarLink("#", "Home"),
     NavbarLink("#", "Destacados"),
@@ -58,4 +69,11 @@ const Header = () => {
   return `<div class='header'>${navBars.map((nav) => nav).join("")}</div>`;
 };
 
-export { Header };
+const barsMenuHandler = (event) => {
+  const barsMenu = document.querySelector("#navbar__bars");
+  const navigation = document.querySelector(".navbar__navigation");
+  barsMenu.classList.toggle("fa-times");
+  navigation.classList.toggle("navbar__active");
+};
+
+export { Header, barsMenuHandler };
