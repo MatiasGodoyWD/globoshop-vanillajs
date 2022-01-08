@@ -1,14 +1,14 @@
 // import { products } from "../products.js";
 import { HomeCard } from "./cards.js";
 
-const CardSlider = (cards, title, action = "") => {
+const CardSlider = (cards, title, action = "", id) => {
   return `
 <h2 class='slider__section__title'>${title}</h2>
 <div class="swiper__container">
-<div class="swiper-button-prev"></div>
-<div class="swiper-button-next"></div>
+<div class="swiper-button-prev" id=${id + "-prev"}></div>
+<div class="swiper-button-next" id=${id + "-next"}></div>
 
-<div class="swiper">
+<div class="swiper" id=${id}>
 
   <div class="swiper-wrapper">
 
@@ -22,7 +22,7 @@ const CardSlider = (cards, title, action = "") => {
   </div>
   </div>
   </div>
-  <div class="swiper-pagination"></div>
+  <div class="swiper-pagination" id=${id + "-pagination"}></div>
   ${action}
 </div>
 

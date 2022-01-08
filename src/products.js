@@ -81,4 +81,22 @@ const products = [
   },
 ];
 
-export { products };
+const categories = [
+  {
+    name: "juego",
+    img: "https://pbs.twimg.com/media/EtaMzePWYAEw7_W?format=jpg&name=large",
+  },
+  {
+    name: "salida",
+    img: "",
+  },
+  {
+    name: "merchandising",
+    img: "",
+  },
+  {
+    name: "entrenamiento",
+    img: "",
+  },
+];
+export { products, categories };

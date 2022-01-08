@@ -2,7 +2,7 @@
 .swiper-button-next {
   color: red !important;
   opacity: 20%;
-  margin: 0rem 30rem;
+  margin: 0rem 1rem;
   transition: var(--animation);
 }
 
@@ -44,7 +44,7 @@
 }
 .swiper {
   height: 99%;
-  width: 25rem;
+  width: 60rem;
   display: flex;
   position: unset;
   align-items: center;
@@ -78,4 +78,14 @@
   font-size: 1rem;
   font-family: var(--secondary-text);
   color: var(--primary-white);
+}
+
+.swiper-slide {
+  transform: scale(0.9);
+  transition: var(--animation);
+}
+
+.swiper-slide-active {
+  transform: scale(1);
+  transition: var(--animation);
 }
