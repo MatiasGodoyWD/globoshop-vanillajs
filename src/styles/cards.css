@@ -3,22 +3,22 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 20rem;
-  height: 30rem;
-  background-color: red;
+  width: 18rem;
+  height: 99%;
+
   margin: 0 auto !important;
   border-radius: 1rem;
 }
 
 .home__card__product {
-  height: 85%;
+  height: 83%;
   width: 100%;
   border-radius: 1rem 1rem 0rem 0rem;
 }
 .home__card__info {
   width: 100%;
   background-color: var(--primary-white);
-  height: 15%;
+  height: 17%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -28,8 +28,10 @@
 
 .home__card__info-title {
   color: var(--primary-black);
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   font-weight: 600;
+  width: 90%;
+  text-align: center;
   /* padding: 1rem; */
 }
 

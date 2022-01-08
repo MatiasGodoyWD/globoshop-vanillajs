@@ -4,14 +4,15 @@ import { Hero } from "./components/hero.js";
 import { CardSlider } from "./components/card-slider.js";
 import { products } from "./products.js";
 import Swiper from "https://unpkg.com/swiper@7/swiper-bundle.esm.browser.min.js";
-import { LatestSection } from "./components/sections.js";
+import { FeaturedSection } from "./components/sections.js";
 const root = document.querySelector(".root");
 
 const main = () => {
-  root.innerHTML = `${Header()} ${Hero()}`;
+  root.innerHTML = `${Header()}${Hero()}${FeaturedSection()}`;
 
   const barsMenu = document.querySelector("#navbar__bars");
   barsMenu.addEventListener("click", barsMenuHandler);
+
   const swiper = new Swiper(".swiper", {
     // Optional parameters
     direction: "horizontal",

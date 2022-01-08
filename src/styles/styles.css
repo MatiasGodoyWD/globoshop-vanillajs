@@ -28,6 +28,11 @@
   flex-direction: column;
 }
 
+body {
+  background-image: url(../../src/img/bg.png);
+  background-repeat: repeat;
+}
+
 main {
   display: flex;
   flex-direction: column;

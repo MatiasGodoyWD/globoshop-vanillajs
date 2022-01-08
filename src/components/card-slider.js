@@ -1,16 +1,17 @@
 // import { products } from "../products.js";
 import { HomeCard } from "./cards.js";
 
-const CardSlider = (cards) => {
+const CardSlider = (cards, title, action = "") => {
   return `
+<h2 class='slider__section__title'>${title}</h2>
 <div class="swiper__container">
 <div class="swiper-button-prev"></div>
 <div class="swiper-button-next"></div>
 
 <div class="swiper">
-  <!-- Additional required wrapper -->
+
   <div class="swiper-wrapper">
-    <!-- Slides -->
+
     ${cards
       .map((card) => {
         {
@@ -19,7 +20,10 @@ const CardSlider = (cards) => {
       })
       .join("")}
   </div>
+  </div>
+  </div>
   <div class="swiper-pagination"></div>
+  ${action}
 </div>
 
 `;
