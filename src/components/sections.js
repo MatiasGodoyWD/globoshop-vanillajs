@@ -19,7 +19,12 @@ const CategoriesSection = () => {
   return `
   <section class='slider__section'>
   
-  ${CardSlider(categories, "Categorias", "", "categories__slider")}
+  ${CardSlider(
+    categories,
+    "Categorias",
+    `<a href='#' class='slider__section__link'>Ver todo</a>`,
+    "categories__slider"
+  )}
 
   </section>`;
 };
@@ -28,8 +33,13 @@ const initializeSlider = (id) => {
   const swiper = new Swiper(id, {
     // Optional parameters
     centeredSlides: true,
-    slidesPerView: 3,
-    spaceBetween: 10,
+    slidesPerView: 1,
+    breakpoints: {
+      640: {
+        slidesPerView: 3,
+        spaceBetween: 10,
+      },
+    },
     direction: "horizontal",
     loop: true,
     pagination: {

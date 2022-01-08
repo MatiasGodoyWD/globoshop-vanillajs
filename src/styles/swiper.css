@@ -89,3 +89,10 @@
   transform: scale(1);
   transition: var(--animation);
 }
+
+@media (min-width: 300px) and (max-width: 640px) {
+  .swiper-button-prev,
+  .swiper-button-next {
+    visibility: hidden;
+  }
+}
