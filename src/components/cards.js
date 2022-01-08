@@ -1,7 +1,7 @@
 import { products } from "../products.js";
 
 const HomeCard = (product) => {
-  const { img, price, name } = product;
+  const { img, name } = product;
   return `
   <div class="home__card">
   <img
@@ -11,7 +11,7 @@ const HomeCard = (product) => {
   />
   <div class="home__card__info">
     <h2 class="home__card__info-title">${name}</h2>
-    <p class="home__card__info-price">$${price}</p>
+    
   </div>
 </div>
   `;

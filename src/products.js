@@ -13,7 +13,7 @@ const products = [
       xxl: 0,
       xxxl: 2,
     },
-    spotlight: true,
+    latest: true,
   },
   {
     id: 2,
@@ -29,7 +29,7 @@ const products = [
       xxl: 0,
       xxxl: 2,
     },
-    spotlight: true,
+    latest: true,
   },
   {
     id: 3,
@@ -45,7 +45,7 @@ const products = [
       xxl: 0,
       xxxl: 2,
     },
-    spotlight: true,
+    latest: true,
   },
   {
     id: 4,
@@ -61,7 +61,7 @@ const products = [
       xxl: 0,
       xxxl: 2,
     },
-    spotlight: true,
+    latest: true,
   },
   {
     id: 5,
@@ -77,7 +77,7 @@ const products = [
       xxl: 0,
       xxxl: 2,
     },
-    spotlight: true,
+    latest: true,
   },
 ];
 
