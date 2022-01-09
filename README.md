@@ -19,4 +19,4 @@
 
 # Link para preview
 
-    https://globoshop.vercel.app/
+    [Globoshop site](https://globoshop.vercel.app/)
