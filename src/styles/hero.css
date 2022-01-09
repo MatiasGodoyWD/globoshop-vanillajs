@@ -1,6 +1,6 @@
 .hero {
   width: 100%;
-  background-image: url(../img/hero.jpg);
+  background-image: url(https://i.ibb.co/DVBVt4H/hero.jpg);
   display: flex;
   align-items: flex-end;
   height: 25rem;
@@ -26,7 +26,7 @@
     }
   }
   .hero {
-    background-image: url(../img/hero-mobile.jpg);
+    background-image: url(https://i.ibb.co/KjxBrSs/hero-mobile.jpg);
   }
   .hero__title {
     font-size: 0.39rem;

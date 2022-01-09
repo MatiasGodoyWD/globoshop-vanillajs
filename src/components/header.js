@@ -33,10 +33,14 @@ const BarsMenu = () => {
 };
 
 const logoNavbarItems = [
-  NavbarImg("navbar__logo", "../src/img/GLOBOSHOP.png", "Globoshop store"),
+  NavbarImg(
+    "navbar__logo",
+    "https://i.ibb.co/ysTytXC/GLOBOSHOP.png",
+    "Globoshop store"
+  ),
   NavbarImg(
     "navbar__slogan",
-    "../src/img/slogan2.png",
+    "https://i.ibb.co/C541p5d/slogan2.png",
     "Siempre en el mismo barrio"
   ),
 ];

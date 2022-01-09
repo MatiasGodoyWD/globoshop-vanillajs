@@ -84,19 +84,19 @@ const products = [
 const categories = [
   {
     name: "juego",
-    img: "https://pbs.twimg.com/media/EtaMzePWYAEw7_W?format=jpg&name=large",
+    img: "https://tienda.cahuracan.com/gd.php?img=archivos%2Fproductos%2F16364992966211_08840192i.jpg&width=500&height=560",
   },
   {
     name: "salida",
-    img: "",
+    img: "https://tienda.cahuracan.com/gd.php?img=archivos%2Fproductos%2F16397829825771_91e265ed-d522-49ea-a97e-25508779eba8.jpg&width=500&height=560",
   },
   {
     name: "merchandising",
-    img: "",
+    img: "https://tienda.cahuracan.com/gd.php?img=archivos%2Fproductos%2F16236947422871_Ghosted+Front.jpg&width=500&height=560",
   },
   {
     name: "entrenamiento",
-    img: "",
+    img: "https://tienda.cahuracan.com/gd.php?img=archivos%2Fproductos%2F16261081804008_1.jpg&width=500&height=560",
   },
 ];
 export { products, categories };

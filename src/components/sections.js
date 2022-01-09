@@ -6,7 +6,7 @@ const featuredProducts = products.filter((prod) => prod.featured);
 
 const FeaturedSection = () => {
   return `
-  <section class= 'slider__section'>
+  <section  class= 'slider__section' data-aos="fade-right">
   ${CardSlider(
     featuredProducts,
     "Productos Destacados",
@@ -17,7 +17,7 @@ const FeaturedSection = () => {
 
 const CategoriesSection = () => {
   return `
-  <section class='slider__section'>
+  <section class='slider__section' data-aos="fade-right">
   
   ${CardSlider(
     categories,

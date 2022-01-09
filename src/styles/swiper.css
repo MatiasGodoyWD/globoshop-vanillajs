@@ -2,7 +2,7 @@
 .swiper-button-next {
   color: red !important;
   opacity: 20%;
-  margin: 0rem 1rem;
+  margin: 0rem 10%;
   transition: var(--animation);
 }
 
@@ -94,5 +94,20 @@
   .swiper-button-prev,
   .swiper-button-next {
     visibility: hidden;
+  }
+  .slider__section__title {
+    font-size: 2rem;
+  }
+
+  [data-aos] {
+    visibility: hidden;
+  }
+  [data-aos].animated {
+    visibility: visible;
+  }
+  @media (min-width: 300px) and (max-width: 360px) {
+    .slider__section__title {
+      font-size: 1.7rem;
+    }
   }
 }
