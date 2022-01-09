@@ -99,12 +99,6 @@
     font-size: 2rem;
   }
 
-  [data-aos] {
-    visibility: hidden;
-  }
-  [data-aos].animated {
-    visibility: visible;
-  }
   @media (min-width: 300px) and (max-width: 360px) {
     .slider__section__title {
       font-size: 1.7rem;

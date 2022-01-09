@@ -84,7 +84,7 @@ const products = [
 const categories = [
   {
     name: "juego",
-    img: "https://tienda.cahuracan.com/gd.php?img=archivos%2Fproductos%2F16364992966211_08840192i.jpg&width=500&height=560",
+    img: "https://tienda.cahuracan.com/gd.php?img=archivos%2Fproductos%2F16315611130309_foto+producto+camiseta.jpg&width=500&height=560",
   },
   {
     name: "salida",
