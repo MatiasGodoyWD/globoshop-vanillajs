@@ -3,6 +3,7 @@
 @import "hero.css";
 @import "cards.css";
 @import "swiper.css";
+@import "contact.css";
 
 :root {
   --primary-red: #ec1c24;

@@ -1,6 +1,5 @@
 import { products, categories } from "../products.js";
 import { CardSlider } from "./card-slider.js";
-import Swiper from "https://unpkg.com/swiper@7/swiper-bundle.esm.browser.min.js";
 
 const featuredProducts = products.filter((prod) => prod.featured);
 
@@ -29,30 +28,8 @@ const CategoriesSection = () => {
   </section>`;
 };
 
-const initializeSlider = (id) => {
-  const swiper = new Swiper(id, {
-    // Optional parameters
-    centeredSlides: true,
-    slidesPerView: 1,
-    breakpoints: {
-      640: {
-        slidesPerView: 3,
-        spaceBetween: 10,
-      },
-    },
-    direction: "horizontal",
-    loop: true,
-    pagination: {
-      el: `${id + "-pagination"}`,
-      type: "bullets",
-      clickable: true,
-    },
-    // Navigation arrows
-    navigation: {
-      nextEl: `${id + "-next"}`,
-      prevEl: `${id + "-prev"}`,
-    },
-  });
+const ContactSection = () => {
+  return `<div class='contact__section' data-aos="fade-right"></div`;
 };
 
-export { FeaturedSection, CategoriesSection, initializeSlider };
+export { FeaturedSection, CategoriesSection, ContactSection };

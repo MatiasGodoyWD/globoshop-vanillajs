@@ -1,4 +1,4 @@
-// import { products } from "../products.js";
+import Swiper from "https://unpkg.com/swiper@7/swiper-bundle.esm.browser.min.js";
 import { HomeCard } from "./cards.js";
 
 const CardSlider = (cards, title, action = "", id) => {
@@ -29,4 +29,30 @@ const CardSlider = (cards, title, action = "", id) => {
 `;
 };
 
-export { CardSlider };
+const initializeSlider = (id) => {
+  const swiper = new Swiper(id, {
+    // Optional parameters
+    centeredSlides: true,
+    slidesPerView: 1,
+    breakpoints: {
+      640: {
+        slidesPerView: 3,
+        spaceBetween: 10,
+      },
+    },
+    direction: "horizontal",
+    loop: true,
+    pagination: {
+      el: `${id + "-pagination"}`,
+      type: "bullets",
+      clickable: true,
+    },
+    // Navigation arrows
+    navigation: {
+      nextEl: `${id + "-next"}`,
+      prevEl: `${id + "-prev"}`,
+    },
+  });
+};
+
+export { CardSlider, initializeSlider };
