@@ -1,7 +1,7 @@
 import { NavbarImg } from "./header.js";
 
 const Footer = () => {
-  return `<footer class="footer" data-aos='fade-up'>
+  return `<footer class="footer" data-aos='fade-right'>
   
   <div class='footer__logos'>
   ${NavbarImg(
@@ -16,7 +16,7 @@ const Footer = () => {
   )}
   </div>
   <div class='footer__info'>
-  <p class='footer__p'>Tienda Oficial C. A. Huracán | Desarrollado por <a href='#'>Matias Godoy</a></p>
+  <p class='footer__p'>Tienda Oficial C. A. Huracán | Desarrollado por <a href='https://www.linkedin.com/in/matiasgodoywd/'>Matias Godoy</a></p>
   </div>
   
   </footer>`;

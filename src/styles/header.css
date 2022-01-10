@@ -42,10 +42,19 @@
 
 .navbar__link {
   color: var(--primary-red);
+  transition: var(--animation);
 }
 
 .navbar__social {
   width: 10%;
+  transition: var(--animation);
+}
+
+.navbar__link:hover,
+.navbar__social > i:hover {
+  color: var(--accent-red);
+  transition: var(--animation);
+  transform: scale(1.05);
 }
 
 .navbar__navigation {
@@ -55,13 +64,43 @@
 .navbar__logo,
 .navbar__slogan {
   height: 60%;
-  /* background-color: rebeccapurple; */
 }
 
 #navbar__bars {
   font-size: 1.2rem;
   cursor: pointer;
   display: none;
+}
+
+#navbar__cart {
+  position: relative;
+}
+.navbar__cart__counter {
+  background-color: var(--primary-black);
+  border-radius: 50%;
+  height: 1rem;
+  width: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-white);
+  font-size: 0.6rem;
+  position: absolute;
+  top: -0.3rem;
+  right: -0.5rem;
+  cursor: pointer;
+  /* visibility: hidden; */
+}
+
+.navbar__fixed {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 999;
+  width: 100%;
+  padding: 0rem 10rem;
+  -webkit-animation: slide-in-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: slide-in-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
 @media (min-width: 300px) and (max-width: 640px) {
@@ -72,6 +111,7 @@
 
   #navbar__bars {
     display: block;
+    padding: 0.5rem;
   }
   .navbar__navigation {
     flex-direction: column;
@@ -88,7 +128,7 @@
     -webkit-transition: var(--animation);
   }
   .navbar__social {
-    width: 28%;
+    width: 30%;
   }
   .navbar__slogan {
     display: none;
@@ -118,5 +158,44 @@
     transition: var(--animation);
     -moz-transition: var(--animation);
     -webkit-transition: var(--animation);
+  }
+  .navbar__fixed {
+    padding: 0rem 1rem;
+  }
+
+  .navbar__cart__counter {
+    top: 0.1rem;
+    right: 0.2rem;
+  }
+  @media (min-width: 300px) and (max-width: 360px) {
+    .navbar__cart__counter {
+      top: 0.1rem;
+      right: -0.1rem;
+    }
+  }
+}
+
+@-webkit-keyframes slide-in-top {
+  0% {
+    -webkit-transform: translateY(-1000px);
+    transform: translateY(-1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-top {
+  0% {
+    -webkit-transform: translateY(-1000px);
+    transform: translateY(-1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
   }
 }

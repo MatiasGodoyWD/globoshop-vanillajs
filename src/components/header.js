@@ -26,6 +26,14 @@ const NavbarLink = (href, content) => {
     `;
 };
 
+const NavbarCartLink = (href, content) => {
+  return `
+   <a href="${href}" class="navbar__link" id='navbar__cart'>
+    ${content}<div class='navbar__cart__counter'>0</div></a>
+
+    `;
+};
+
 const BarsMenu = () => {
   return `
 <i id="navbar__bars" class="fas fa-bars"></i>
@@ -48,13 +56,13 @@ const logoNavbarItems = [
 const navbarMenu = [
   BarsMenu(),
   NavbarItems("navbar__navigation", [
-    NavbarLink("#", "Home"),
-    NavbarLink("#", "Destacados"),
-    NavbarLink("#", "Categoria"),
-    NavbarLink("#", "Contacto"),
+    NavbarLink("#header", "Home"),
+    NavbarLink("#featured__section", "Destacados"),
+    NavbarLink("#categories__section", "Categorias"),
+    NavbarLink("#contact__section", "Contacto"),
   ]),
   NavbarItems("navbar__social", [
-    NavbarLink(
+    NavbarCartLink(
       "#",
       `<i class="fas fa-shopping-cart"></i
 >`
@@ -70,7 +78,7 @@ const navBars = [
 ];
 
 const Header = () => {
-  return `<div class='header' data-aos='fade-right'>${navBars
+  return `<div class='header' id='header' data-aos='fade-right'>${navBars
     .map((nav) => nav)
     .join("")}</div>`;
 };
@@ -82,4 +90,16 @@ const barsMenuHandler = (event) => {
   navigation.classList.toggle("navbar__active");
 };
 
-export { Header, barsMenuHandler, NavbarImg };
+const menuScrollHandler = (barsMenu, navigationMenu, navbarMenu) => {
+  window.onscroll = () => {
+    barsMenu.classList.remove("fa-times");
+    navigationMenu.classList.remove("navbar__active");
+
+    if (window.scrollY > 150) {
+      navbarMenu.classList.add("navbar__fixed");
+    } else {
+      navbarMenu.classList.remove("navbar__fixed");
+    }
+  };
+};
+export { Header, barsMenuHandler, NavbarImg, menuScrollHandler };

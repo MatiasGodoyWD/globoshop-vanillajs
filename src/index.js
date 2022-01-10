@@ -1,8 +1,11 @@
-import { HomeCard } from "./components/cards.js";
-import { Header, barsMenuHandler } from "./components/header.js";
+import {
+  Header,
+  barsMenuHandler,
+  menuScrollHandler,
+} from "./components/header.js";
 import { Hero } from "./components/hero.js";
-import { CardSlider, initializeSlider } from "./components/card-slider.js";
-import { products } from "./products.js";
+import { initializeSlider } from "./components/card-slider.js";
+
 import {
   FeaturedSection,
   CategoriesSection,
@@ -24,7 +27,11 @@ const main = () => {
   `;
 
   const barsMenu = document.querySelector("#navbar__bars");
+  const navbarMenu = document.querySelector(".navbar__menu");
+  const navigationMenu = document.querySelector(".navbar__navigation");
   barsMenu.addEventListener("click", barsMenuHandler);
+
+  menuScrollHandler(barsMenu, navigationMenu, navbarMenu);
   initializeSlider("#featured__slider");
   initializeSlider("#categories__slider");
 };

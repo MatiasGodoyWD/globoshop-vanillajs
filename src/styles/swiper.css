@@ -28,7 +28,7 @@
   align-items: center;
   justify-content: space-around;
   border-bottom: 1rem;
-  padding: 2rem 0rem;
+  padding: 3rem 0rem;
   /* margin-bottom: 2rem; */
   /* background-color: blue; */
 }
@@ -94,13 +94,13 @@
   }
   .slider__section__title {
     font-size: 2rem;
-    padding: 0.5rem;
+    padding: 0rem 1rem;
   }
 
   @media (min-width: 300px) and (max-width: 360px) {
     .slider__section__title {
       font-size: 1.7rem;
-      padding: 0.5rem;
+      padding: 0rem 1rem;
     }
   }
 }

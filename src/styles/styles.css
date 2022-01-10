@@ -9,6 +9,7 @@
 
 :root {
   --primary-red: #ec1c24;
+  --accent-red: #ff0004;
   --primary-white: #fff;
   --primary-gray: #3d3a3a;
   --primary-black: #0b090a;
@@ -33,9 +34,15 @@
   flex-direction: column;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-image: url(https://i.ibb.co/rwfpyYK/bg.png);
   background-repeat: repeat;
+  background-position: center;
+  background-color: var(--primary-white);
 }
 
 main {

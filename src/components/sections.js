@@ -6,7 +6,7 @@ const featuredProducts = products.filter((prod) => prod.featured);
 
 const FeaturedSection = () => {
   return `
-  <section  class= 'slider__section' data-aos="fade-right">
+  <section  class= 'slider__section' id='featured__section' data-aos="fade-right">
   ${CardSlider(
     featuredProducts,
     "Productos Destacados",
@@ -17,7 +17,7 @@ const FeaturedSection = () => {
 
 const CategoriesSection = () => {
   return `
-  <section class='slider__section' data-aos="fade-right">
+  <section class='slider__section' id='categories__section' data-aos="fade-right">
   
   ${CardSlider(
     categories,
@@ -30,7 +30,7 @@ const CategoriesSection = () => {
 };
 
 const ContactSection = () => {
-  return `<section class='contact__section' data-aos="fade-right">
+  return `<section class='contact__section' id='contact__section' data-aos="fade-right">
   
   ${Form()}
   </section>`;

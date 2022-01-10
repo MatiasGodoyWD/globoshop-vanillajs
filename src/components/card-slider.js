@@ -1,6 +1,5 @@
-import Swiper from "https://unpkg.com/swiper@7/swiper-bundle.esm.browser.min.js";
 import { HomeCard } from "./cards.js";
-
+import Swiper from "https://unpkg.com/swiper@7/swiper-bundle.esm.browser.min.js";
 const CardSlider = (cards, title, action = "", id) => {
   return `
 <h2 class='slider__section__title'>${title}</h2>
