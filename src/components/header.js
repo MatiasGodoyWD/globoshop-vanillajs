@@ -82,4 +82,4 @@ const barsMenuHandler = (event) => {
   navigation.classList.toggle("navbar__active");
 };
 
-export { Header, barsMenuHandler };
+export { Header, barsMenuHandler, NavbarImg };
