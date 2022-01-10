@@ -9,6 +9,7 @@ import {
   ContactSection,
   SubscribeSection,
 } from "./components/sections.js";
+import { Footer } from "./components/footer.js";
 
 const root = document.querySelector(".root");
 
@@ -19,6 +20,7 @@ const main = () => {
   ${CategoriesSection()}
   ${ContactSection()}
   ${SubscribeSection()}
+  ${Footer()}
   `;
 
   const barsMenu = document.querySelector("#navbar__bars");

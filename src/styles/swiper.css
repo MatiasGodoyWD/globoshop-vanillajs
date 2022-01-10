@@ -68,16 +68,13 @@
 .slider__section__title {
   width: 100%;
   text-align: center;
-  font-size: 2.5rem;
+  font-size: 2.2rem;
 }
-.slider__section__link {
+.slider__section__button {
   text-align: center;
   padding: 0.5rem 1.5rem;
   border-radius: 0.3rem;
-  background-color: var(--primary-red);
   font-size: 1rem;
-  font-family: var(--secondary-text);
-  color: var(--primary-white);
 }
 
 .swiper-slide {
@@ -97,11 +94,13 @@
   }
   .slider__section__title {
     font-size: 2rem;
+    padding: 0.5rem;
   }
 
   @media (min-width: 300px) and (max-width: 360px) {
     .slider__section__title {
       font-size: 1.7rem;
+      padding: 0.5rem;
     }
   }
 }

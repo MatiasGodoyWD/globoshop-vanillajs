@@ -70,7 +70,9 @@ const navBars = [
 ];
 
 const Header = () => {
-  return `<div class='header'>${navBars.map((nav) => nav).join("")}</div>`;
+  return `<div class='header' data-aos='fade-right'>${navBars
+    .map((nav) => nav)
+    .join("")}</div>`;
 };
 
 const barsMenuHandler = (event) => {

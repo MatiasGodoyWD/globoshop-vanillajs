@@ -10,7 +10,7 @@ const FeaturedSection = () => {
   ${CardSlider(
     featuredProducts,
     "Productos Destacados",
-    `<a href='#' class='slider__section__link'>Ver catálogo</a>`,
+    `<button href='#' class='slider__section__button'>Ver catálogo</button>`,
     "featured__slider"
   )}</section>`;
 };
@@ -22,7 +22,7 @@ const CategoriesSection = () => {
   ${CardSlider(
     categories,
     "Categorias",
-    `<a href='#' class='slider__section__link'>Ver todo</a>`,
+    `<button href='#' class='slider__section__button'>Ver todo</button>`,
     "categories__slider"
   )}
 
@@ -38,10 +38,12 @@ const ContactSection = () => {
 
 const SubscribeSection = () => {
   return `
-  
   <section  class='subscribe__section' data-aos="fade-right">
+  <h2 class='slider__section__title'>Suscribite y enterate de las últimas novedades</h2>
+  <div class='suscribe__component' >
   <input type='text' class='subscribe__input'/>
   <button type='submit' class='subscribe__btn'>Suscribirse</button>
+  </div>
   </section>
   
 

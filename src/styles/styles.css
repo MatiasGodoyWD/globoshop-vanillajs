@@ -5,6 +5,7 @@
 @import "swiper.css";
 @import "contact.css";
 @import "subscribe.css";
+@import "footer.css";
 
 :root {
   --primary-red: #ec1c24;
@@ -43,4 +44,20 @@ main {
   align-items: center;
   justify-content: center;
   width: 100%;
+}
+
+button {
+  text-align: center;
+
+  background-color: var(--primary-red);
+  font-size: 1.1rem;
+  font-family: var(--secondary-text);
+  color: var(--primary-white);
+  border: 1.5px solid var(--primary-red);
+  transition: var(--animation);
+  cursor: pointer;
+}
+button:hover {
+  transition: var(--animation);
+  background-color: #cc0219;
 }
