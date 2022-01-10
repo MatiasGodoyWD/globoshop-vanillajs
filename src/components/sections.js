@@ -1,5 +1,6 @@
 import { products, categories } from "../products.js";
 import { CardSlider } from "./card-slider.js";
+import { Form, FormInput } from "./contact-form.js";
 
 const featuredProducts = products.filter((prod) => prod.featured);
 
@@ -29,7 +30,22 @@ const CategoriesSection = () => {
 };
 
 const ContactSection = () => {
-  return `<div class='contact__section' data-aos="fade-right"></div`;
+  return `<section class='contact__section' data-aos="fade-right">
+  
+  ${Form()}
+  </section>`;
 };
 
-export { FeaturedSection, CategoriesSection, ContactSection };
+const SubscribeSection = () => {
+  return `
+  
+  <section  class='subscribe__section' data-aos="fade-right">
+  <input type='text' class='subscribe__input'/>
+  <button type='submit' class='subscribe__btn'>Suscribirse</button>
+  </section>
+  
+
+`;
+};
+
+export { FeaturedSection, CategoriesSection, ContactSection, SubscribeSection };

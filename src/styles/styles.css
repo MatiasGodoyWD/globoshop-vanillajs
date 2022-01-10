@@ -4,6 +4,7 @@
 @import "cards.css";
 @import "swiper.css";
 @import "contact.css";
+@import "subscribe.css";
 
 :root {
   --primary-red: #ec1c24;
@@ -13,6 +14,8 @@
   --primary-text: "Lato", sans-serif;
   --secondary-text: "Hind Madurai", sans-serif;
   --animation: all 0.2s linear;
+  --input-placeholder: rgba(255, 255, 255, 0.39);
+  --input-background: #1801021f;
 }
 
 * {

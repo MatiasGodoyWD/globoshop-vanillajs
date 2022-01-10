@@ -7,12 +7,19 @@ import {
   FeaturedSection,
   CategoriesSection,
   ContactSection,
+  SubscribeSection,
 } from "./components/sections.js";
 
 const root = document.querySelector(".root");
 
 const main = () => {
-  root.innerHTML = `${Header()}${Hero()}${FeaturedSection()}${CategoriesSection()}${ContactSection()}`;
+  root.innerHTML = `${Header()}
+  ${Hero()}
+  ${FeaturedSection()}
+  ${CategoriesSection()}
+  ${ContactSection()}
+  ${SubscribeSection()}
+  `;
 
   const barsMenu = document.querySelector("#navbar__bars");
   barsMenu.addEventListener("click", barsMenuHandler);
