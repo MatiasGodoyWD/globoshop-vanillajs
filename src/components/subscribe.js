@@ -16,7 +16,7 @@ const subscribeHandler = () => {
   if (!isValidEmail(subsInput)) {
     subsConfirmation.classList.add("subscribe__confirmation-fail");
     subsConfirmation.style.visibility = "visible";
-    subsConfirmation.innerHTML = `<i class="fas fa-times-circle"></i> Por favor, ingrese un e-mail valido`;
+    subsConfirmation.innerHTML = `<i class="fas fa-times"></i> Por favor, ingrese un e-mail valido`;
     setTimeout(() => {
       subsConfirmation.style.visibility = "hidden";
     }, 3000);

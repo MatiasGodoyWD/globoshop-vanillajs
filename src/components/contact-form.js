@@ -58,7 +58,7 @@ const showSuccessMessage = (successSpan, msg) => {
   successSpan.style.visibility = "visible";
   successSpan.classList.remove("subscribe__confirmation-fail");
   successSpan.classList.add("subscribe__confirmation-success");
-  successSpan.innerHTML = `<i class="fas fa-check-circle"></i> ${msg}`;
+  successSpan.innerHTML = `<i class="fas fa-check"></i> ${msg}`;
   setTimeout(() => {
     successSpan.style.visibility = "hidden";
   }, 3000);
@@ -69,7 +69,7 @@ const showEmptyInputsError = (inputs, errorSpan) => {
     errorSpan.classList.remove("subscribe__confirmation-success");
     errorSpan.classList.add("subscribe__confirmation-fail");
     errorSpan.style.visibility = "visible";
-    errorSpan.innerHTML = `<i class="fas fa-times-circle"></i> Por favor, complete los campos vacios`;
+    errorSpan.innerHTML = `<i class="fas fa-times"></i> Por favor, complete los campos vacios`;
     setTimeout(() => {
       errorSpan.style.visibility = "hidden";
     }, 3000);
@@ -81,7 +81,7 @@ const showInvalidInputsError = (inputs, errorSpan) => {
     errorSpan.classList.remove("subscribe__confirmation-success");
     errorSpan.classList.add("subscribe__confirmation-fail");
     errorSpan.style.visibility = "visible";
-    errorSpan.innerHTML = `<i class="fas fa-times-circle"></i> ${"Los datos ingresados no son validos"}`;
+    errorSpan.innerHTML = `<i class="fas fa-times"></i> ${"Los datos ingresados no son validos"}`;
     setTimeout(() => {
       errorSpan.style.visibility = "hidden";
     }, 3000);

@@ -64,9 +64,14 @@
 
 .subscribe__confirmation-fail i {
   color: var(--primary-red);
+  margin-left: -0.5rem;
+  margin-right: 0.5rem;
 }
+
 .subscribe__confirmation-success i {
   color: rgb(64, 209, 28);
+  margin-left: -0.5rem;
+  margin-right: 0.5rem;
 }
 
 @media (min-width: 300px) and (max-width: 640px) {
