@@ -1,6 +1,7 @@
 import { products, categories } from "../products.js";
 import { CardSlider } from "./card-slider.js";
-import { Form, FormInput } from "./contact-form.js";
+import { Form } from "./contact-form.js";
+import { SubscribeComponent } from "./subscribe.js";
 
 const featuredProducts = products.filter((prod) => prod.featured);
 
@@ -39,11 +40,7 @@ const ContactSection = () => {
 const SubscribeSection = () => {
   return `
   <section  class='subscribe__section' data-aos="fade-right">
-  <h2 class='slider__section__title'>Suscribite y enterate de las últimas novedades</h2>
-  <div class='suscribe__component' >
-  <input type='text' class='subscribe__input'/>
-  <button type='submit' class='subscribe__btn'>Suscribirse</button>
-  </div>
+  ${SubscribeComponent()}
   </section>
   
 

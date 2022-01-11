@@ -67,8 +67,14 @@ const navbarMenu = [
       `<i class="fas fa-shopping-cart"></i
 >`
     ),
-    NavbarLink("#", `<i class="fab fa-instagram"></i>`),
-    NavbarLink("#", `<i class="fab fa-twitter"></i>`),
+    NavbarLink(
+      "https://www.instagram.com/tiendacahuracan/",
+      `<i class="fab fa-instagram"></i>`
+    ),
+    NavbarLink(
+      "https://twitter.com/tiendacahuracan",
+      `<i class="fab fa-twitter"></i>`
+    ),
   ]),
 ];
 

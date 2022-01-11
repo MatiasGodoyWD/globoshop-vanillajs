@@ -13,6 +13,8 @@ import {
   SubscribeSection,
 } from "./components/sections.js";
 import { Footer } from "./components/footer.js";
+import { contactMessageHandler } from "./components/contact-form.js";
+import { subscribeHandler } from "./components/subscribe.js";
 
 const root = document.querySelector(".root");
 
@@ -29,7 +31,11 @@ const main = () => {
   const barsMenu = document.querySelector("#navbar__bars");
   const navbarMenu = document.querySelector(".navbar__menu");
   const navigationMenu = document.querySelector(".navbar__navigation");
+  const contactBTN = document.querySelector(".form__btn");
+  const subscribeBTN = document.querySelector(".subscribe__btn");
   barsMenu.addEventListener("click", barsMenuHandler);
+  contactBTN.addEventListener("click", contactMessageHandler);
+  subscribeBTN.addEventListener("click", subscribeHandler);
 
   menuScrollHandler(barsMenu, navigationMenu, navbarMenu);
   initializeSlider("#featured__slider");

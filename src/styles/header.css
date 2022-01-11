@@ -101,6 +101,7 @@
   padding: 0rem 10rem;
   -webkit-animation: slide-in-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   animation: slide-in-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
 @media (min-width: 300px) and (max-width: 640px) {

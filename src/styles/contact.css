@@ -8,6 +8,7 @@
   background-position: center;
   background-color: #8b1d2a;
   background-image: url("https://i.ibb.co/kKGyNzF/red-bg.png");
+  position: relative;
 }
 
 .contact__form {
@@ -93,7 +94,41 @@
   width: 100%;
 }
 
+.form__input:focus {
+  outline: none;
+
+  border: 2px solid var(--primary-black);
+}
+
+#form__confirmation {
+  font-family: var(--secondary-text);
+  display: flex;
+  align-items: center;
+  padding: 0.2rem 0rem;
+  visibility: hidden;
+  width: 100%;
+  justify-content: center;
+  font-weight: 500;
+  font-family: var(--primary-text);
+  position: absolute;
+  bottom: 1.5rem;
+  left: 0;
+  color: var(--primary-white);
+  text-align: center;
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+#form__confirmation i {
+  padding-top: 0.2rem;
+  padding-right: 0.3rem;
+}
+
 @media (min-width: 300px) and (max-width: 640px) {
+  .contact__section {
+    padding: 4rem 2rem;
+  }
+
   .contact__form {
     width: 100%;
   }
