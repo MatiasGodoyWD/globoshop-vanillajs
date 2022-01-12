@@ -1,0 +1,45 @@
+.filter__section {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 0.1rem solid rgba(109, 109, 109, 0.096);
+  height: 10rem;
+  padding: 2rem;
+}
+
+.select__label {
+  font-weight: 600;
+  padding-bottom: 0.5rem;
+  font-family: var(--primary-text);
+  font-size: 0.9rem;
+  align-self: flex-start;
+  color: var(--primary-black);
+}
+.select__input {
+  padding: 0.7rem 0.4rem;
+  border-radius: 0.3rem;
+  font-family: var(--secondary-text);
+  font-weight: 300;
+  border: 1.5px solid rgba(0, 0, 0, 0.171);
+  background-color: var(--primary-white);
+  font-family: var(--secondary-text);
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+.form-control-select {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+}
+
+.product-grid__section {
+  display: grid;
+  width: 80%;
+  justify-content: center;
+  grid-auto-columns: 70%;
+  grid-auto-rows: 20rem;
+  padding: 2rem 0rem;
+  row-gap: 2rem;
+}

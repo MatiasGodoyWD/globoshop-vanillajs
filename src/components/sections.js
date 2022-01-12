@@ -1,7 +1,9 @@
 import { products, categories } from "../products.js";
 import { CardSlider } from "./card-slider.js";
 import { Form } from "./contact-form.js";
+import { FilterBar } from "./filter-bar.js";
 import { SubscribeComponent } from "./subscribe.js";
+import { HomeCard, ProductCard } from "./cards.js";
 
 const featuredProducts = products.filter((prod) => prod.featured);
 
@@ -11,8 +13,9 @@ const FeaturedSection = () => {
   ${CardSlider(
     featuredProducts,
     "Productos Destacados",
-    `<button href='#' class='slider__section__button'>Ver catálogo</button>`,
-    "featured__slider"
+    `<a href='../../products.html' class='slider__section__button'>Ver catálogo</a>`,
+    "featured__slider",
+    ""
   )}</section>`;
 };
 
@@ -23,8 +26,9 @@ const CategoriesSection = () => {
   ${CardSlider(
     categories,
     "Categorias",
-    `<button href='#' class='slider__section__button'>Ver todo</button>`,
-    "categories__slider"
+    ``,
+    "categories__slider",
+    "categories__card"
   )}
 
   </section>`;
@@ -47,4 +51,45 @@ const SubscribeSection = () => {
 `;
 };
 
-export { FeaturedSection, CategoriesSection, ContactSection, SubscribeSection };
+const redirectionHandler = (e) => {
+  e.preventDefault();
+  if (
+    e.target.parentNode.classList.contains("home__card") ||
+    e.target.parentNode.classList.contains("home__card__info")
+  ) {
+    const category = e.target.parentNode.dataset.category;
+    window.location.href = `../products/${category}.html`;
+  }
+};
+
+const FiltersSection = (activeProducts) => {
+  return `
+  <div class='filter__section'> 
+    ${FilterBar(activeProducts)}
+  </div>
+  `;
+};
+
+const renderizeProducts = (activeProducts) => {
+  return `
+    ${activeProducts.map((prod) => ProductCard(prod)).join("")}
+    `;
+};
+
+const ProductGridSection = (activeProducts) => {
+  return `
+    <div class='product-grid__section'>
+    ${renderizeProducts(activeProducts)}
+    </div>
+  `;
+};
+
+export {
+  FeaturedSection,
+  CategoriesSection,
+  ContactSection,
+  SubscribeSection,
+  redirectionHandler,
+  FiltersSection,
+  ProductGridSection,
+};

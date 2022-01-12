@@ -53,7 +53,7 @@ const logoNavbarItems = [
   ),
 ];
 
-const navbarMenu = [
+const landingNavbarMenu = [
   BarsMenu(),
   NavbarItems("navbar__navigation", [
     NavbarLink("#header", "Home"),
@@ -80,11 +80,49 @@ const navbarMenu = [
 
 const navBars = [
   Navbar("logo__navbar", logoNavbarItems),
-  Navbar("navbar__menu", navbarMenu),
+  Navbar("navbar__menu", landingNavbarMenu),
 ];
 
-const Header = () => {
-  return `<div class='header' id='header' data-aos='fade-right'>${navBars
+const LandingHeader = () => {
+  return `<div class='header' id='landing__header' data-aos='fade-right'>${navBars
+    .map((nav) => nav)
+    .join("")}</div>`;
+};
+
+const productsNavbarMenu = [
+  BarsMenu(),
+  NavbarItems("navbar__navigation", [
+    NavbarLink("../../index.html", "Home"),
+    NavbarLink("#", "Todos"),
+    NavbarLink("#", "Juego"),
+    NavbarLink("#", "Entrenamiento"),
+    NavbarLink("#", "Salida"),
+    NavbarLink("#", "Merchandising"),
+  ]),
+  NavbarItems("navbar__social", [
+    NavbarCartLink(
+      "#",
+      `<i class="fas fa-shopping-cart"></i
+>`
+    ),
+    NavbarLink(
+      "https://www.instagram.com/tiendacahuracan/",
+      `<i class="fab fa-instagram"></i>`
+    ),
+    NavbarLink(
+      "https://twitter.com/tiendacahuracan",
+      `<i class="fab fa-twitter"></i>`
+    ),
+  ]),
+];
+
+const productNavbars = [
+  Navbar("logo__navbar", logoNavbarItems),
+  Navbar("navbar__menu", productsNavbarMenu),
+];
+
+const ProductsHeader = () => {
+  return `<div class='header' id='products__header' data-aos='fade-right'>${productNavbars
     .map((nav) => nav)
     .join("")}</div>`;
 };
@@ -96,16 +134,37 @@ const barsMenuHandler = (event) => {
   navigation.classList.toggle("navbar__active");
 };
 
-const menuScrollHandler = (barsMenu, navigationMenu, navbarMenu) => {
+const menuScrollHandler = (barsMenu, navigationMenu, landingNavbarMenu) => {
   window.onscroll = () => {
     barsMenu.classList.remove("fa-times");
     navigationMenu.classList.remove("navbar__active");
 
     if (window.scrollY > 150) {
-      navbarMenu.classList.add("navbar__fixed");
+      landingNavbarMenu.classList.add("navbar__fixed");
     } else {
-      navbarMenu.classList.remove("navbar__fixed");
+      landingNavbarMenu.classList.remove("navbar__fixed");
     }
   };
 };
-export { Header, barsMenuHandler, NavbarImg, menuScrollHandler };
+
+const categoriesRedirectionHandler = (e) => {
+  if (
+    e.target.classList.contains("navbar__link") &&
+    e.target.textContent !== "Home"
+  ) {
+    const category = e.target.textContent.toLowerCase();
+    if (category === "todos") {
+      window.location.href = `../products.html`;
+    } else {
+      window.location.href = `../products/${category}.html`;
+    }
+  }
+};
+export {
+  LandingHeader,
+  barsMenuHandler,
+  NavbarImg,
+  menuScrollHandler,
+  ProductsHeader,
+  categoriesRedirectionHandler,
+};

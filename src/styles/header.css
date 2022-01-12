@@ -61,6 +61,10 @@
   width: 35%;
 }
 
+#products__header .navbar__navigation {
+  width: 55%;
+}
+
 .navbar__logo,
 .navbar__slogan {
   height: 60%;
@@ -127,6 +131,9 @@
     transition: var(--animation);
     -moz-transition: var(--animation);
     -webkit-transition: var(--animation);
+  }
+  #products__header .navbar__navigation {
+    width: 100%;
   }
   .navbar__social {
     width: 30%;

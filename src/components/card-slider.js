@@ -1,6 +1,6 @@
 import { HomeCard } from "./cards.js";
 import Swiper from "https://unpkg.com/swiper@7/swiper-bundle.esm.browser.min.js";
-const CardSlider = (cards, title, action = "", id) => {
+const CardSlider = (cards, title, action = "", id, className) => {
   return `
 <h2 class='slider__section__title'>${title}</h2>
 <div class="swiper__container">
@@ -9,12 +9,15 @@ const CardSlider = (cards, title, action = "", id) => {
 
 <div class="swiper" id=${id}>
 
-  <div class="swiper-wrapper">
+  <div class="swiper-wrapper" id= '${id + "-wrapper"}'>
 
     ${cards
       .map((card) => {
         {
-          return `<div class="swiper-slide">${HomeCard(card)}</div>`;
+          return `<div class="swiper-slide" >${HomeCard(
+            card,
+            className
+          )}</div>`;
         }
       })
       .join("")}

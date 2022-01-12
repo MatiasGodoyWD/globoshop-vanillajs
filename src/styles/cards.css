@@ -10,10 +10,25 @@
   border-radius: 1rem;
 }
 
+.product__card {
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  display: flex;
+  align-items: center;
+  border-radius: 0.5rem;
+  background-color: var(--primary-white);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='12' viewBox='0 0 20 12'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='charlie-brown' fill='%23ff0004' fill-opacity='0.05'%3E%3Cpath d='M9.8 12L0 2.2V.8l10 10 10-10v1.4L10.2 12h-.4zm-4 0L0 6.2V4.8L7.2 12H5.8zm8.4 0L20 6.2V4.8L12.8 12h1.4zM9.8 0l.2.2.2-.2h-.4zm-4 0L10 4.2 14.2 0h-1.4L10 2.8 7.2 0H5.8z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
 .home__card__product {
   height: 83%;
   width: 100%;
   border-radius: 1rem 1rem 0rem 0rem;
+}
+
+.product__card__product {
+  height: 100%;
+  width: 35%;
+  border-radius: 0.5rem 0rem 0rem 0.5rem;
 }
 .home__card__info {
   width: 100%;
@@ -26,10 +41,94 @@
   border-radius: 0rem 0rem 1rem 1rem;
 }
 
+.product__card__info {
+  width: 65%;
+  height: 85%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 0rem 3rem;
+  border-radius: 0rem 0.5rem 0.5rem 0rem;
+}
+
 .home__card__info-title {
   color: var(--primary-black);
   font-size: 1.1rem;
   font-weight: 600;
   width: 90%;
   text-align: center;
+}
+.product__card__info-name {
+  color: var(--primary-black);
+  font-size: 1.6rem;
+  font-weight: 700;
+  width: 100%;
+}
+
+.product__card__info-category {
+  color: var(--primary-gray);
+  font-family: var(--tertiary-text);
+  font-size: 0.7rem;
+  padding: 0.1rem 0rem;
+  font-weight: 600;
+  width: 100%;
+}
+
+.product__card__info-price {
+  color: var(--secondary-red);
+  font-family: var(--primary-text);
+  font-size: 1.6rem;
+  padding: 0.6rem 0rem;
+  font-weight: 700;
+  width: 100%;
+}
+
+.product__card__info-BTN {
+  padding: 0.5rem 2rem;
+  border-radius: 0.5rem;
+}
+
+.categories__card {
+  cursor: pointer;
+}
+
+.product__card__info-sizes {
+  width: 100%;
+  padding-top: 2rem;
+}
+
+.product__card__info-sizes p {
+  /* background-color: tomato; */
+  font-weight: 400;
+  font-size: 0.9rem;
+  width: 100%;
+}
+
+.product__card__size-options {
+  padding: 0.8rem 0rem;
+  width: 75%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.size__span {
+  font-size: 0.65rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-gray);
+  font-family: var(--tertiary-text);
+  padding: 0.5rem 0rem;
+  margin-top: , 2rem;
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 0.3rem;
+  font-weight: 500;
+  border: 0.01rem solid var(--primary-gray);
+  /* background-color: var(--primary-white); */
+  /* box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; */
+}
+.product__card__info-BTN {
 }
