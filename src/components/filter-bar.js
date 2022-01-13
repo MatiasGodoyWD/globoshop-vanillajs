@@ -1,4 +1,10 @@
-import { products } from "../products.js";
+import {
+  products,
+  activeProducts,
+  updateActiveProducts,
+  updateLocalStorage,
+} from "../products.js";
+import { renderizeProducts } from "./sections.js";
 
 const SelectOption = (value) => {
   return `<option value="${value}" >${
@@ -12,7 +18,7 @@ const FormSelectInput = (name, title, id, options, placeholder) => {
     <label for="${name}" class="select__label">${title}:</label>
   
   <select name="${name}" id="${id}" class="select__input">
-  <option value="" disabled selected>${placeholder}</option>
+  <option value="${placeholder}" selected>${placeholder}</option>
   ${options.map((op) => SelectOption(op)).join("")}
   </select>
 
@@ -35,6 +41,7 @@ const priceOptions = [
   "Entre $5000 y $10000",
   "Menos de $5000",
 ];
+
 const FilterBar = (activeProducts) => {
   return `
     ${FormSelectInput(
@@ -62,4 +69,70 @@ const FilterBar = (activeProducts) => {
     `;
 };
 
-export { FilterBar };
+const orderSelectHandler = (e) => {
+  const prodGrid = document.querySelector(".product-grid__section");
+  if (e.target.value === "Mayor precio") {
+    activeProducts.sort((a, b) => (a.price < b.price ? 1 : -1));
+    prodGrid.innerHTML = `${renderizeProducts(activeProducts)}`;
+  }
+  if (e.target.value === "Menor precio") {
+    activeProducts.sort((a, b) => (a.price > b.price ? 1 : -1));
+    prodGrid.innerHTML = `${renderizeProducts(activeProducts)}`;
+  }
+  if (e.target.value === "Nombre") {
+    activeProducts.sort((a, b) => (a.name > b.name ? 1 : -1));
+    prodGrid.innerHTML = `${renderizeProducts(activeProducts)}`;
+  }
+  if (e.target.value === "Predeterminado") {
+    activeProducts.sort((a, b) => (a.id > b.id ? 1 : -1));
+    prodGrid.innerHTML = `${renderizeProducts(activeProducts)}`;
+  }
+};
+
+const filterByElementHandler = (e) => {
+  const orderSelect = document.querySelector("#order__select");
+  const prodGrid = document.querySelector(".product-grid__section");
+
+  let prods = products.filter((p) => p.type === e.target.value);
+  updateActiveProducts(prods);
+  updateLocalStorage(prods);
+  if (orderSelect.value === "Mayor precio") {
+    prods.sort((a, b) => (a.price < b.price ? 1 : -1));
+  }
+  if (orderSelect.value === "Menor precio") {
+    prods.sort((a, b) => (a.price > b.price ? 1 : -1));
+  }
+  if (orderSelect.value === "Nombre") {
+    prods.sort((a, b) => (a.name > b.name ? 1 : -1));
+  }
+
+  prodGrid.innerHTML = `${renderizeProducts(prods)}`;
+};
+
+const filterByPrice = (e) => {
+  const orderSelect = document.querySelector("#order__select");
+  const prodGrid = document.querySelector(".product-grid__section");
+
+  let prods = [];
+  if (e.target.value === "Entre $5000 y $10000") {
+    console.log("hola");
+    prods = activeProducts.filter(
+      (prod) => prod.price >= 5000 && prod.price <= 5000
+    );
+  }
+  updateActiveProducts(prods);
+  updateLocalStorage(prods);
+  if (orderSelect.value === "Mayor precio") {
+    prods.sort((a, b) => (a.price < b.price ? 1 : -1));
+  }
+  if (orderSelect.value === "Menor precio") {
+    prods.sort((a, b) => (a.price > b.price ? 1 : -1));
+  }
+  if (orderSelect.value === "Nombre") {
+    prods.sort((a, b) => (a.name > b.name ? 1 : -1));
+  }
+
+  prodGrid.innerHTML = `${renderizeProducts(prods)}`;
+};
+
+export { FilterBar, orderSelectHandler, filterByElementHandler, filterByPrice };

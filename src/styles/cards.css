@@ -113,7 +113,7 @@
   justify-content: space-between;
 }
 
-.size__span {
+.size__label {
   font-size: 0.65rem;
   display: flex;
   align-items: center;
@@ -127,8 +127,17 @@
   border-radius: 0.3rem;
   font-weight: 500;
   border: 0.01rem solid var(--primary-gray);
+  cursor: pointer;
   /* background-color: var(--primary-white); */
   /* box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; */
 }
+
+.size__label-active {
+  border: 0.01rem solid var(--primary-red);
+  color: var(--primary-white);
+  background-color: var(--primary-red);
+}
+
 .product__card__info-BTN {
+  font-size: 0.8rem;
 }

@@ -1,3 +1,9 @@
+import { sizeOptionsHandler } from "./components/cards.js";
+import {
+  filterByElementHandler,
+  filterByPrice,
+  orderSelectHandler,
+} from "./components/filter-bar.js";
 import {
   ProductsHeader,
   barsMenuHandler,
@@ -5,23 +11,39 @@ import {
   categoriesRedirectionHandler,
 } from "./components/header.js";
 import { FiltersSection, ProductGridSection } from "./components/sections.js";
-import { products } from "./products.js";
+import { products, activeProducts } from "./products.js";
 
 const root = document.querySelector(".root");
-const activeProducts = [...products];
-const productsInit = () => {
+
+const productsInit = (prods) => {
   root.innerHTML = `
-  ${ProductsHeader()}
-    <main>
-    ${FiltersSection(activeProducts)}
-    ${ProductGridSection(activeProducts)}
-    </main>`;
+${ProductsHeader()}
+<main>
+${FiltersSection(prods)}
+${ProductGridSection(prods)}
+</main> 
+`;
   const barsMenu = document.querySelector("#navbar__bars");
   const navbarMenu = document.querySelector(".navbar__menu");
   const navigationMenu = document.querySelector(".navbar__navigation");
+  const prodGrid = document.querySelector(".product-grid__section");
+
+  const orderSelect = document.querySelector("#order__select");
+  const elementSelect = document.querySelector("#element__select");
+  const priceSelect = document.querySelector("#price__select");
+
   barsMenu.addEventListener("click", barsMenuHandler);
   navigationMenu.addEventListener("click", categoriesRedirectionHandler);
+
+  prodGrid.addEventListener("click", sizeOptionsHandler);
+
+  orderSelect.addEventListener("change", orderSelectHandler);
+  elementSelect.addEventListener("change", filterByElementHandler);
+  priceSelect.addEventListener("change", filterByPrice);
+
   menuScrollHandler(barsMenu, navigationMenu, navbarMenu);
 };
 
-productsInit();
+productsInit(products);
+
+export { productsInit };

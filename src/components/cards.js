@@ -44,7 +44,10 @@ const ProductCard = (product) => {
     <div class='product__card__info-sizes'>
       <p>Seleccionar talle:</p>
       <div class='product__card__size-options'>${sizesList
-        .map((size) => `<span class='size__span'>${size}</span>`)
+        .map(
+          (size) =>
+            `<span class='size__label' data-size='${size}'>${size}</span>`
+        )
         .join("")}</div>
       </div>
     <button type='submit' class= 'product__card__info-BTN'>AÑADIR AL CARRITO</button>
@@ -53,4 +56,22 @@ const ProductCard = (product) => {
   `;
 };
 
-export { HomeCard, ProductCard };
+const sizeOptionsHandler = (e) => {
+  if (e.target.classList.contains("size__label")) {
+    if (e.target.classList.contains("size__label-active")) return;
+    const sizeSpans = [...e.target.parentNode.querySelectorAll(".size__label")];
+    console.log(sizeSpans);
+    if (
+      sizeSpans.some((span) => span.classList.contains("size__label-active"))
+    ) {
+      const activeSpan = sizeSpans.find((span) =>
+        span.classList.contains("size__label-active")
+      );
+      activeSpan.classList.remove("size__label-active");
+    }
+
+    e.target.classList.add("size__label-active");
+  }
+};
+
+export { HomeCard, ProductCard, sizeOptionsHandler };

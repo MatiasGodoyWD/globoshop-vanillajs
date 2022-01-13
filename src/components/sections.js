@@ -92,4 +92,5 @@ export {
   redirectionHandler,
   FiltersSection,
   ProductGridSection,
+  renderizeProducts,
 };
