@@ -1,9 +1,5 @@
 import { sizeOptionsHandler } from "./components/cards.js";
-import {
-  filterByElementHandler,
-  filterByPrice,
-  orderSelectHandler,
-} from "./components/filter-bar.js";
+import { filterHandler } from "./components/filter-bar.js";
 import {
   ProductsHeader,
   barsMenuHandler,
@@ -37,9 +33,9 @@ ${ProductGridSection(prods)}
 
   prodGrid.addEventListener("click", sizeOptionsHandler);
 
-  orderSelect.addEventListener("change", orderSelectHandler);
-  elementSelect.addEventListener("change", filterByElementHandler);
-  priceSelect.addEventListener("change", filterByPrice);
+  orderSelect.addEventListener("change", filterHandler);
+  elementSelect.addEventListener("change", filterHandler);
+  priceSelect.addEventListener("change", filterHandler);
 
   menuScrollHandler(barsMenu, navigationMenu, navbarMenu);
 };

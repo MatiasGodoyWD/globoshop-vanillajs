@@ -69,70 +69,55 @@ const FilterBar = (activeProducts) => {
     `;
 };
 
-const orderSelectHandler = (e) => {
-  const prodGrid = document.querySelector(".product-grid__section");
-  if (e.target.value === "Mayor precio") {
-    activeProducts.sort((a, b) => (a.price < b.price ? 1 : -1));
-    prodGrid.innerHTML = `${renderizeProducts(activeProducts)}`;
+const orderProducts = (input, prods) => {
+  if (input.value === "Mayor precio") {
+    return prods.sort((a, b) => (a.price < b.price ? 1 : -1));
   }
-  if (e.target.value === "Menor precio") {
-    activeProducts.sort((a, b) => (a.price > b.price ? 1 : -1));
-    prodGrid.innerHTML = `${renderizeProducts(activeProducts)}`;
+  if (input.value === "Menor precio") {
+    return prods.sort((a, b) => (a.price > b.price ? 1 : -1));
   }
-  if (e.target.value === "Nombre") {
-    activeProducts.sort((a, b) => (a.name > b.name ? 1 : -1));
-    prodGrid.innerHTML = `${renderizeProducts(activeProducts)}`;
+  if (input.value === "Nombre") {
+    return prods.sort((a, b) => (a.name > b.name ? 1 : -1));
   }
-  if (e.target.value === "Predeterminado") {
-    activeProducts.sort((a, b) => (a.id > b.id ? 1 : -1));
-    prodGrid.innerHTML = `${renderizeProducts(activeProducts)}`;
+  if (input.value === "Predeterminado") {
+    return prods.sort((a, b) => (a.id > b.id ? 1 : -1));
   }
 };
 
-const filterByElementHandler = (e) => {
-  const orderSelect = document.querySelector("#order__select");
+const filterByElement = (input, prods) => {
+  if (input.value === "Todas") {
+    return prods;
+  }
+  return prods.filter((p) => p.type === input.value);
+};
+
+const filterByPrice = (input, prods) => {
+  if (input.value === "Todos") {
+    return prods;
+  }
+  if (input.value === "Entre $5000 y $10000") {
+    return prods.filter((prod) => prod.price >= 5000 && prod.price <= 10000);
+  }
+  if (input.value === "Mas de $10.000") {
+    return prods.filter((prod) => prod.price > 10000);
+  }
+  if (input.value === "Menos de $5000") {
+    return prods.filter((prod) => prod.price < 5000);
+  }
+};
+
+const filterHandler = () => {
+  let prods = [...products];
+
   const prodGrid = document.querySelector(".product-grid__section");
-
-  let prods = products.filter((p) => p.type === e.target.value);
-  updateActiveProducts(prods);
-  updateLocalStorage(prods);
-  if (orderSelect.value === "Mayor precio") {
-    prods.sort((a, b) => (a.price < b.price ? 1 : -1));
-  }
-  if (orderSelect.value === "Menor precio") {
-    prods.sort((a, b) => (a.price > b.price ? 1 : -1));
-  }
-  if (orderSelect.value === "Nombre") {
-    prods.sort((a, b) => (a.name > b.name ? 1 : -1));
-  }
-
+  const orderSelect = document.querySelector("#order__select");
+  const elementSelect = document.querySelector("#element__select");
+  const priceSelect = document.querySelector("#price__select");
+  prods = filterByElement(elementSelect, prods);
+  console.log(prods);
+  prods = filterByPrice(priceSelect, prods);
+  prods = orderProducts(orderSelect, prods);
   prodGrid.innerHTML = `${renderizeProducts(prods)}`;
 };
 
-const filterByPrice = (e) => {
-  const orderSelect = document.querySelector("#order__select");
-  const prodGrid = document.querySelector(".product-grid__section");
-
-  let prods = [];
-  if (e.target.value === "Entre $5000 y $10000") {
-    console.log("hola");
-    prods = activeProducts.filter(
-      (prod) => prod.price >= 5000 && prod.price <= 5000
-    );
-  }
-  updateActiveProducts(prods);
-  updateLocalStorage(prods);
-  if (orderSelect.value === "Mayor precio") {
-    prods.sort((a, b) => (a.price < b.price ? 1 : -1));
-  }
-  if (orderSelect.value === "Menor precio") {
-    prods.sort((a, b) => (a.price > b.price ? 1 : -1));
-  }
-  if (orderSelect.value === "Nombre") {
-    prods.sort((a, b) => (a.name > b.name ? 1 : -1));
-  }
-
-  prodGrid.innerHTML = `${renderizeProducts(prods)}`;
-};
-
-export { FilterBar, orderSelectHandler, filterByElementHandler, filterByPrice };
+export { FilterBar, filterHandler };
