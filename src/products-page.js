@@ -7,7 +7,7 @@ import {
   categoriesRedirectionHandler,
 } from "./components/header.js";
 import { FiltersSection, ProductGridSection } from "./components/sections.js";
-import { products, activeProducts } from "./products.js";
+import { products } from "./products.js";
 
 const root = document.querySelector(".root");
 
@@ -33,9 +33,15 @@ ${ProductGridSection(prods)}
 
   prodGrid.addEventListener("click", sizeOptionsHandler);
 
-  orderSelect.addEventListener("change", filterHandler);
-  elementSelect.addEventListener("change", filterHandler);
-  priceSelect.addEventListener("change", filterHandler);
+  orderSelect.addEventListener("change", () => {
+    filterHandler(prods);
+  });
+  elementSelect.addEventListener("change", () => {
+    filterHandler(prods);
+  });
+  priceSelect.addEventListener("change", () => {
+    filterHandler(prods);
+  });
 
   menuScrollHandler(barsMenu, navigationMenu, navbarMenu);
 };

@@ -106,15 +106,14 @@ const filterByPrice = (input, prods) => {
   }
 };
 
-const filterHandler = () => {
-  let prods = [...products];
+const filterHandler = (prodList) => {
+  let prods = [...prodList];
 
   const prodGrid = document.querySelector(".product-grid__section");
   const orderSelect = document.querySelector("#order__select");
   const elementSelect = document.querySelector("#element__select");
   const priceSelect = document.querySelector("#price__select");
   prods = filterByElement(elementSelect, prods);
-  console.log(prods);
   prods = filterByPrice(priceSelect, prods);
   prods = orderProducts(orderSelect, prods);
   prodGrid.innerHTML = `${renderizeProducts(prods)}`;
