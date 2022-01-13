@@ -1,11 +1,37 @@
 .filter__section {
   width: 80%;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: space-between;
   border-bottom: 0.1rem solid rgba(109, 109, 109, 0.096);
   height: 10rem;
   padding: 2rem;
+}
+.filter__options {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.filter__tab i {
+  margin-right: 0.3rem;
+  margin-left: -0.3rem;
+}
+
+.filter__tab {
+  width: 100%;
+  height: 4rem;
+  padding: 0.5rem;
+  justify-content: center;
+  align-items: center;
+  color: var(--primary-black);
+  background: var(--primary-white);
+  display: none;
+  cursor: pointer;
+  border-bottom: 0.1rem solid rgba(109, 109, 109, 0.096);
+  border-top: 0.1rem solid rgba(109, 109, 109, 0.096);
+  margin-top: 1rem;
 }
 
 .select__label {
@@ -39,7 +65,65 @@
   width: 80%;
   justify-content: center;
   grid-auto-columns: 70%;
-  grid-auto-rows: 20rem;
+  grid-auto-rows: auto;
   padding: 2rem 0rem;
   row-gap: 2rem;
+  /* background: red; */
+}
+.product-grid__section-empty {
+  display: flex;
+  width: 80%;
+  text-align: center;
+  justify-content: center;
+}
+
+@media (min-width: 300px) and (max-width: 640px) {
+  .product-grid__section {
+    width: 100%;
+    grid-auto-columns: 80%;
+  }
+  .filter__section {
+    width: 100%;
+    height: 3rem;
+    padding: 0rem;
+    border-bottom: 0rem solid rgba(109, 109, 109, 0);
+  }
+  .filter__tab {
+    display: flex;
+    width: 100%;
+    transition: var(--animation);
+    position: relative;
+    transition: var(--animation);
+  }
+  .filter__options {
+    position: absolute;
+    margin-top: 3rem;
+    flex-direction: column;
+    width: 100%;
+    height: 22rem;
+    padding: 1rem 0rem 3rem 0rem;
+    background-color: var(--primary-white);
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    transform: translateX(-200%);
+    transition: var(--animation);
+  }
+  .form-control-select {
+    width: 80%;
+  }
+  .filter__tab-active {
+    border-bottom: 0px solid rgba(0, 0, 0, 0);
+    color: var(--primary-red);
+    transition: var(--animation);
+  }
+  .filter__options-active {
+    transform: translateX(0);
+    transition: var(--animation);
+  }
+}
+
+.empty__grid {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background: red;
 }

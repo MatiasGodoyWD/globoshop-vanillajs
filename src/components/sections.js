@@ -79,7 +79,11 @@ const renderizeProducts = (activeProducts) => {
 const ProductGridSection = (activeProducts) => {
   return `
     <div class='product-grid__section'>
-    ${renderizeProducts(activeProducts)}
+    ${
+      !activeProducts.length
+        ? `<p class'empty__grid'>No existen productos que cumplan con los criterios seleccionados. Por favor, modifique sus criterios de selección.</p>`
+        : renderizeProducts(activeProducts)
+    }
     </div>
   `;
 };

@@ -134,6 +134,17 @@ const barsMenuHandler = (event) => {
   navigation.classList.toggle("navbar__active");
 };
 
+const productsbarsMenuHandler = (event) => {
+  const filterMenu = document.querySelector(".filter__tab");
+  const filterOptions = document.querySelector(".filter__options");
+  const barsMenu = document.querySelector("#navbar__bars");
+  const navigation = document.querySelector(".navbar__navigation");
+  barsMenu.classList.toggle("fa-times");
+  navigation.classList.toggle("navbar__active");
+  filterMenu.classList.remove("filter__tab-active");
+  filterOptions.classList.remove("filter__options-active");
+};
+
 const menuScrollHandler = (barsMenu, navigationMenu, landingNavbarMenu) => {
   window.onscroll = () => {
     barsMenu.classList.remove("fa-times");
@@ -167,4 +178,5 @@ export {
   menuScrollHandler,
   ProductsHeader,
   categoriesRedirectionHandler,
+  productsbarsMenuHandler,
 };

@@ -42,8 +42,14 @@ const priceOptions = [
   "Menos de $5000",
 ];
 
+const ResponsiveFilterTab = () => {
+  return `<div class='filter__tab'><i class="fas fa-filter"></i>Preferencias</div>`;
+};
+
 const FilterBar = (activeProducts) => {
   return `
+  ${ResponsiveFilterTab()}
+  <div class='filter__options'>
     ${FormSelectInput(
       "order",
       "Ordenar por",
@@ -65,7 +71,7 @@ const FilterBar = (activeProducts) => {
       priceOptions,
       "Todos"
     )}
-    
+    </div>
     `;
 };
 
@@ -116,7 +122,25 @@ const filterHandler = (prodList) => {
   prods = filterByElement(elementSelect, prods);
   prods = filterByPrice(priceSelect, prods);
   prods = orderProducts(orderSelect, prods);
-  prodGrid.innerHTML = `${renderizeProducts(prods)}`;
+
+  if (!prods.length) {
+    prodGrid.classList.add("product-grid__section-empty");
+  } else {
+    prodGrid.classList.remove("product-grid__section-empty");
+  }
+
+  prodGrid.innerHTML = `    ${
+    !prods.length
+      ? `<p class'empty__grid'>No existen productos que cumplan con los criterios seleccionados. Por favor, modifique sus criterios de selección.</p>`
+      : renderizeProducts(prods)
+  }`;
 };
 
-export { FilterBar, filterHandler };
+const filterMenuHandler = () => {
+  const filterMenu = document.querySelector(".filter__tab");
+  const filterOptions = document.querySelector(".filter__options");
+  filterMenu.classList.toggle("filter__tab-active");
+  filterOptions.classList.toggle("filter__options-active");
+};
+
+export { FilterBar, filterHandler, filterMenuHandler };

@@ -131,6 +131,7 @@
     transition: var(--animation);
     -moz-transition: var(--animation);
     -webkit-transition: var(--animation);
+    z-index: 1000;
   }
   #products__header .navbar__navigation {
     width: 100%;

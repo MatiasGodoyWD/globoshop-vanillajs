@@ -1,10 +1,11 @@
 import { sizeOptionsHandler } from "./components/cards.js";
-import { filterHandler } from "./components/filter-bar.js";
+import { filterHandler, filterMenuHandler } from "./components/filter-bar.js";
 import {
   ProductsHeader,
   barsMenuHandler,
   menuScrollHandler,
   categoriesRedirectionHandler,
+  productsbarsMenuHandler,
 } from "./components/header.js";
 import { FiltersSection, ProductGridSection } from "./components/sections.js";
 import { products } from "./products.js";
@@ -27,10 +28,10 @@ ${ProductGridSection(prods)}
   const orderSelect = document.querySelector("#order__select");
   const elementSelect = document.querySelector("#element__select");
   const priceSelect = document.querySelector("#price__select");
-
-  barsMenu.addEventListener("click", barsMenuHandler);
+  const filterTab = document.querySelector(".filter__tab");
+  barsMenu.addEventListener("click", productsbarsMenuHandler);
   navigationMenu.addEventListener("click", categoriesRedirectionHandler);
-
+  filterTab.addEventListener("click", filterMenuHandler);
   prodGrid.addEventListener("click", sizeOptionsHandler);
 
   orderSelect.addEventListener("change", () => {
