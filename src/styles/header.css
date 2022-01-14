@@ -190,12 +190,16 @@
   }
 }
 
-@media (min-width: 901px) and (max-width: 1200px) {
+@media (min-width: 901px) and (max-width: 1400px) {
   #products__header .navbar__navigation {
     width: 70%;
   }
   .navbar__fixed {
-    padding: 0rem 7rem;
+    padding: 0rem 8rem;
+  }
+
+  #landing__header .navbar__navigation {
+    width: 60%;
   }
 }
 

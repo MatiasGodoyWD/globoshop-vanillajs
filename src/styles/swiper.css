@@ -110,3 +110,23 @@
     }
   }
 }
+@media (min-width: 901px) and (max-width: 1400px) {
+  .swiper-button-prev,
+  .swiper-button-next {
+    margin: 0rem 2%;
+  }
+}
+
+@media (min-width: 901px) and (max-width: 1200px) {
+  .swiper-button-prev,
+  .swiper-button-next {
+    margin: 0rem 0rem;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1400px) {
+  .swiper-button-prev,
+  .swiper-button-next {
+    margin: 0rem 4%;
+  }
+}
