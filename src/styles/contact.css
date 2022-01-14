@@ -124,7 +124,7 @@
   padding-right: 0.3rem;
 }
 
-@media (min-width: 300px) and (max-width: 640px) {
+@media (min-width: 300px) and (max-width: 901px) {
   .contact__section {
     padding: 4rem 2rem;
   }

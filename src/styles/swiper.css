@@ -87,7 +87,7 @@
   transition: var(--animation);
 }
 
-@media (min-width: 300px) and (max-width: 640px) {
+@media (min-width: 300px) and (max-width: 901px) {
   .swiper-button-prev,
   .swiper-button-next {
     visibility: hidden;
@@ -101,6 +101,12 @@
     .slider__section__title {
       font-size: 1.7rem;
       padding: 0rem 1rem;
+    }
+  }
+  @media (min-width: 700px) and (max-width: 901px) {
+    .swiper-button-prev,
+    .swiper-button-next {
+      visibility: visible;
     }
   }
 }

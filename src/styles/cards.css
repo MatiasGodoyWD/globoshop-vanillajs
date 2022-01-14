@@ -43,7 +43,7 @@
 
 .product__card__info {
   width: 65%;
-  height: 85%;
+  height: 90%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -136,7 +136,7 @@
   border-radius: 0.5rem;
 }
 
-@media (min-width: 300px) and (max-width: 640px) {
+@media (min-width: 300px) and (max-width: 901px) {
   .product__card {
     flex-direction: column;
     width: 100%;
@@ -190,6 +190,13 @@
       font-size: 0.6rem;
       width: 1.7rem;
       height: 1.7rem;
+    }
+  }
+  @media (min-width: 640px) and (max-width: 901px) {
+    .product__card__info {
+      width: 100%;
+      padding: 1.5rem 2rem;
+      border-radius: 0rem 0rem 0.5rem 0.5rem;
     }
   }
 }

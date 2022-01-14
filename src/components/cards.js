@@ -28,7 +28,7 @@ const ProductCard = (product) => {
   const { img, name, price, category } = product;
   return `
   
-  <div class="product__card">
+  <div class="product__card" data-aos="fade-right">
   <img
     src="${img}"
     alt="${name}"

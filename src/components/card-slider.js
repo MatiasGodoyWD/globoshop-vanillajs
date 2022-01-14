@@ -37,7 +37,7 @@ const initializeSlider = (id) => {
     centeredSlides: true,
     slidesPerView: 1,
     breakpoints: {
-      640: {
+      900: {
         slidesPerView: 3,
         spaceBetween: 10,
       },

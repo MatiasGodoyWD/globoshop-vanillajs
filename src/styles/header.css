@@ -108,7 +108,7 @@
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
-@media (min-width: 300px) and (max-width: 640px) {
+@media (min-width: 300px) and (max-width: 901px) {
   .navbar__menu {
     width: 100%;
     padding: 0rem 1rem;
@@ -181,6 +181,21 @@
       top: 0.1rem;
       right: -0.1rem;
     }
+  }
+  @media (min-width: 650px) and (max-width: 901px) {
+    .navbar__cart__counter {
+      top: 0.1rem;
+      right: 1.2rem;
+    }
+  }
+}
+
+@media (min-width: 901px) and (max-width: 1200px) {
+  #products__header .navbar__navigation {
+    width: 70%;
+  }
+  .navbar__fixed {
+    padding: 0rem 7rem;
   }
 }
 

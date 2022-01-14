@@ -5,6 +5,7 @@
   align-items: flex-end;
   height: 25rem;
   background-position-x: center;
+  background-size: cover;
 }
 
 .hero__title {
@@ -19,7 +20,7 @@
   font-size: 0.6rem;
 }
 
-@media (min-width: 300px) and (max-width: 640px) {
+@media (min-width: 300px) and (max-width: 901px) {
   @media (min-width: 300px) and (max-width: 360px) {
     .hero__title {
       text-align: center;

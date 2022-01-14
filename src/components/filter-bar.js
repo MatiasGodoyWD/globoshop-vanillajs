@@ -43,13 +43,13 @@ const priceOptions = [
 ];
 
 const ResponsiveFilterTab = () => {
-  return `<div class='filter__tab'><i class="fas fa-filter"></i>Preferencias</div>`;
+  return `<div class='filter__tab' data-aos='fade-right'><i class="fas fa-filter"></i>Preferencias</div>`;
 };
 
 const FilterBar = (activeProducts) => {
   return `
   ${ResponsiveFilterTab()}
-  <div class='filter__options'>
+  <div class='filter__options' >
     ${FormSelectInput(
       "order",
       "Ordenar por",

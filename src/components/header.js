@@ -93,11 +93,11 @@ const productsNavbarMenu = [
   BarsMenu(),
   NavbarItems("navbar__navigation", [
     NavbarLink("../../index.html", "Home"),
-    NavbarLink("#", "Todos"),
-    NavbarLink("#", "Juego"),
-    NavbarLink("#", "Entrenamiento"),
-    NavbarLink("#", "Salida"),
-    NavbarLink("#", "Merchandising"),
+    NavbarLink("../../products.html", "Todos"),
+    NavbarLink("../../products/juego.html", "Juego"),
+    NavbarLink("../../products/entrenamiento.html", "Entrenamiento"),
+    NavbarLink("../../products/salida.html", "Salida"),
+    NavbarLink("../../products/merchandising.html", "Merchandising"),
   ]),
   NavbarItems("navbar__social", [
     NavbarCartLink(
@@ -159,17 +159,17 @@ const menuScrollHandler = (barsMenu, navigationMenu, landingNavbarMenu) => {
 };
 
 const categoriesRedirectionHandler = (e) => {
-  if (
-    e.target.classList.contains("navbar__link") &&
-    e.target.textContent !== "Home"
-  ) {
-    const category = e.target.textContent.toLowerCase();
-    if (category === "todos") {
-      window.location.href = `../products.html`;
-    } else {
-      window.location.href = `../products/${category}.html`;
-    }
-  }
+  // if (
+  //   e.target.classList.contains("navbar__link") &&
+  //   e.target.textContent !== "Home"
+  // ) {
+  //   const category = e.target.textContent.toLowerCase();
+  //   if (category === "todos") {
+  //     window.location.href = `../products.html`;
+  //   } else {
+  //     window.location.href = `../products/${category}.html`;
+  //   }
+  // }
 };
 export {
   LandingHeader,
