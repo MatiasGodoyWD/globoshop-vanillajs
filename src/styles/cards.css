@@ -136,6 +136,20 @@
   border-radius: 0.5rem;
 }
 
+.size__error-container {
+  position: absolute;
+  margin-left: -1%;
+  margin-top: .;
+  -webkit-animation: blink-2 0.9s infinite both;
+  animation: blink-2 0.9s infinite both;
+  visibility: hidden;
+  color: red;
+}
+
+.size__error-container-active {
+  visibility: visible;
+}
+
 @media (min-width: 300px) and (max-width: 901px) {
   .product__card {
     flex-direction: column;
@@ -198,5 +212,28 @@
       padding: 1.5rem 2rem;
       border-radius: 0rem 0rem 0.5rem 0.5rem;
     }
+  }
+}
+
+@-webkit-keyframes blink-2 {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes blink-2 {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 1;
   }
 }

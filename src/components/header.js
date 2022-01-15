@@ -26,10 +26,15 @@ const NavbarLink = (href, content) => {
     `;
 };
 
-const NavbarCartLink = (href, content) => {
+const myCart = JSON.parse(localStorage.getItem("cart")) || [];
+const bubbleQ = myCart.quantity || 0;
+
+const NavbarCartLink = (href, content, cartQ) => {
   return `
    <a href="${href}" class="navbar__link" id='navbar__cart'>
-    ${content}<div class='navbar__cart__counter'></div></a>
+    ${content}<div class='navbar__cart__counter ${
+    bubbleQ === 0 ? "navbar__cart__counter-inactive" : ""
+  }'>${bubbleQ}</div></a>
 
     `;
 };
@@ -101,7 +106,7 @@ const productsNavbarMenu = [
   ]),
   NavbarItems("navbar__social", [
     NavbarCartLink(
-      "#",
+      "../../cart.html",
       `<i class="fas fa-shopping-cart"></i
 >`
     ),

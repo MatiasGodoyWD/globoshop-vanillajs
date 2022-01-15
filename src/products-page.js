@@ -1,4 +1,4 @@
-import { addToCart, sizeOptionsHandler } from "./components/cards.js";
+import { addToCartHandler, sizeOptionsHandler } from "./components/cards.js";
 import { filterHandler, filterMenuHandler } from "./components/filter-bar.js";
 import {
   ProductsHeader,
@@ -46,7 +46,7 @@ ${ProductGridSection(prods)}
   });
 
   menuScrollHandler(barsMenu, navigationMenu, navbarMenu);
-  prodGrid.addEventListener("click", addToCart);
+  prodGrid.addEventListener("click", addToCartHandler);
 };
 
 productsInit(products);

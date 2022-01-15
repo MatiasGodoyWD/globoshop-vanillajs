@@ -42,7 +42,11 @@ const ProductCard = (product) => {
     <p class='product__card__info-price'>$${price}</p>
     </div>
     <div class='product__card__info-sizes'>
-      <p>Seleccionar talle:</p>
+      <p>
+      <span class='size__error-container'>
+      <i class="fas fa-times" ></i>
+      </span>
+      Seleccionar talle:</p>
       <div class='product__card__size-options'>${sizesList
         .map(
           (size) =>
@@ -74,31 +78,74 @@ const sizeOptionsHandler = (e) => {
   }
 };
 
-const addToCart = (e) => {
+const addToCart = (sizeOptions, prod, sizeError) => {
+  const bubble = document.querySelector(".navbar__cart__counter");
+  if (
+    !sizeOptions.some((span) => span.classList.contains("size__label-active"))
+  ) {
+    console.log(sizeError);
+    sizeError.classList.add("size__error-container-active");
+    setTimeout(() => {
+      sizeError.classList.remove("size__error-container-active");
+    }, 2000);
+    return;
+  }
+
+  const activeSpan = sizeOptions.find((span) =>
+    span.classList.contains("size__label-active")
+  );
+  const cartProd = {
+    name: prod.dataset.name,
+    img: prod.dataset.img,
+    price: prod.dataset.price,
+    size: activeSpan.textContent,
+    quantity: 1,
+  };
+  if (
+    cart.products.some(
+      (prod) => prod.name === cartProd.name && prod.size === cartProd.size
+    )
+  ) {
+    let equalNameProds = cart.products.filter(
+      (prod) => prod.name === cartProd.name
+    );
+
+    const updatedProd = equalNameProds.find(
+      (prod) => prod.name === cartProd.name && prod.size === cartProd.size
+    );
+
+    equalNameProds = equalNameProds.filter(
+      (prod) => prod.name === cartProd.name && prod.size !== cartProd.size
+    );
+
+    updatedProd.quantity++;
+    equalNameProds.push(updatedProd);
+
+    cart.products = cart.products.filter((prod) => prod.name !== cartProd.name);
+    cart.products = [...cart.products, ...equalNameProds];
+  } else {
+    cart.products.push(cartProd);
+  }
+
+  cart.quantity++;
+  cart.total += Number(cartProd.price);
+  localStorage.setItem("cart", JSON.stringify(cart));
+  bubble.textContent = cart.quantity;
+  bubble.classList.remove("navbar__cart__counter-inactive");
+};
+
+const addToCartHandler = (e) => {
   e.preventDefault();
   if (e.target.classList.contains("product__card__info-BTN")) {
+    const sizeError =
+      e.target.previousSibling.previousSibling.firstChild.nextSibling.firstChild
+        .nextSibling;
     const sizeLabel =
       e.target.previousSibling.previousSibling.firstChild.nextSibling
         .nextSibling.nextSibling;
     const sizeOptions = [...sizeLabel.querySelectorAll(".size__label")];
-    console.log(sizeOptions);
-    if (
-      sizeOptions.some((span) => span.classList.contains("size__label-active"))
-    ) {
-      const activeSpan = sizeOptions.find((span) =>
-        span.classList.contains("size__label-active")
-      );
-      const cartProd = {
-        name: e.target.dataset.name,
-        img: e.target.dataset.img,
-        price: e.target.dataset.price,
-        size: activeSpan.textContent,
-      };
-      console.log(cartProd);
-      cart.push(cartProd);
-      localStorage.setItem("cart", JSON.stringify(cart));
-    }
+    addToCart(sizeOptions, e.target, sizeError);
   }
 };
 
-export { HomeCard, ProductCard, sizeOptionsHandler, addToCart };
+export { HomeCard, ProductCard, sizeOptionsHandler, addToCartHandler };

@@ -93,6 +93,13 @@
   top: -0.3rem;
   right: -0.5rem;
   cursor: pointer;
+}
+
+.navbar__cart__counter-inactive {
+  visibility: hidden;
+}
+
+.navbar__cart__counter-active {
   visibility: hidden;
 }
 

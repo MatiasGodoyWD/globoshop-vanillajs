@@ -1,3 +1,4 @@
+import { ProductCard } from "./components/cards.js";
 import {
   ProductsHeader,
   menuScrollHandler,
@@ -7,7 +8,11 @@ import {
 
 const root = document.querySelector(".root");
 
-let cart = JSON.parse(localStorage.getItem("cart")) || [];
+let cart = JSON.parse(localStorage.getItem("cart")) || {
+  products: [],
+  quantity: 0,
+  total: 0,
+};
 localStorage.setItem("cart", JSON.stringify(cart));
 
 const cartInit = () => {
@@ -15,7 +20,7 @@ const cartInit = () => {
 ${ProductsHeader()}
 <main>
 
-</main> 
+</main>
 `;
   const barsMenu = document.querySelector("#navbar__bars");
   const navbarMenu = document.querySelector(".navbar__menu");
