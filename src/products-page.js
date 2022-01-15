@@ -1,4 +1,4 @@
-import { sizeOptionsHandler } from "./components/cards.js";
+import { addToCart, sizeOptionsHandler } from "./components/cards.js";
 import { filterHandler, filterMenuHandler } from "./components/filter-bar.js";
 import {
   ProductsHeader,
@@ -24,6 +24,7 @@ ${ProductGridSection(prods)}
   const navbarMenu = document.querySelector(".navbar__menu");
   const navigationMenu = document.querySelector(".navbar__navigation");
   const prodGrid = document.querySelector(".product-grid__section");
+  const prodCardBTN = document.querySelector(".product__card__info-BTN");
 
   const orderSelect = document.querySelector("#order__select");
   const elementSelect = document.querySelector("#element__select");
@@ -45,6 +46,7 @@ ${ProductGridSection(prods)}
   });
 
   menuScrollHandler(barsMenu, navigationMenu, navbarMenu);
+  prodGrid.addEventListener("click", addToCart);
 };
 
 productsInit(products);

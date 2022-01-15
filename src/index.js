@@ -23,10 +23,12 @@ const root = document.querySelector(".root");
 const main = () => {
   root.innerHTML = `${LandingHeader()}
   ${Hero()}
+  <main>
   ${FeaturedSection()}
   ${CategoriesSection()}
   ${ContactSection()}
   ${SubscribeSection()}
+  </main>
   ${Footer()}
   `;
 

@@ -29,7 +29,7 @@ const NavbarLink = (href, content) => {
 const NavbarCartLink = (href, content) => {
   return `
    <a href="${href}" class="navbar__link" id='navbar__cart'>
-    ${content}<div class='navbar__cart__counter'>0</div></a>
+    ${content}<div class='navbar__cart__counter'></div></a>
 
     `;
 };
@@ -63,7 +63,7 @@ const landingNavbarMenu = [
   ]),
   NavbarItems("navbar__social", [
     NavbarCartLink(
-      "#",
+      "../../cart.html",
       `<i class="fas fa-shopping-cart"></i
 >`
     ),

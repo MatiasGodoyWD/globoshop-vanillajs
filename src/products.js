@@ -352,24 +352,24 @@ const categories = [
   },
 ];
 
-localStorage.setItem("products", JSON.stringify(products));
-localStorage.setItem("activeProducts", JSON.stringify(products));
+// localStorage.setItem("products", JSON.stringify(products));
+// localStorage.setItem("activeProducts", JSON.stringify(products));
 
-let activeProducts = JSON.parse(localStorage.getItem("activeProducts"));
+// let activeProducts = JSON.parse(localStorage.getItem("activeProducts"));
 
-const updateLocalStorage = (list) => {
-  localStorage.setItem("activeProducts", JSON.stringify(list));
-};
+// const updateLocalStorage = (list) => {
+//   localStorage.setItem("activeProducts", JSON.stringify(list));
+// };
 
-const updateActiveProducts = (list) => {
-  localStorage.setItem("activeProducts", JSON.stringify(list));
-  activeProducts = JSON.parse(localStorage.getItem("activeProducts"));
-};
+// const updateActiveProducts = (list) => {
+//   localStorage.setItem("activeProducts", JSON.stringify(list));
+//   activeProducts = JSON.parse(localStorage.getItem("activeProducts"));
+// };
 
 export {
   products,
   categories,
-  activeProducts,
-  updateActiveProducts,
-  updateLocalStorage,
+  // activeProducts,
+  // updateActiveProducts,
+  // updateLocalStorage,
 };

@@ -93,7 +93,7 @@
   top: -0.3rem;
   right: -0.5rem;
   cursor: pointer;
-  /* visibility: hidden; */
+  visibility: hidden;
 }
 
 .navbar__fixed {

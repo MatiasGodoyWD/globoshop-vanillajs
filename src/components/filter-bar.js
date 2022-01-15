@@ -1,9 +1,9 @@
-import {
-  products,
-  activeProducts,
-  updateActiveProducts,
-  updateLocalStorage,
-} from "../products.js";
+// import {
+//   products,
+//   activeProducts,
+//   updateActiveProducts,
+//   updateLocalStorage,
+// } from "../products.js";
 import { renderizeProducts } from "./sections.js";
 
 const SelectOption = (value) => {

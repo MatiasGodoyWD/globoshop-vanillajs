@@ -1,5 +1,5 @@
 import { products } from "../products.js";
-
+import { cart } from "../cart.js";
 const HomeCard = (product, className) => {
   const { img, name } = product;
 
@@ -46,11 +46,11 @@ const ProductCard = (product) => {
       <div class='product__card__size-options'>${sizesList
         .map(
           (size) =>
-            `<span class='size__label' data-size='${size}'>${size}</span>`
+            `<span class='size__label' data-size='${size}' >${size}</span>`
         )
         .join("")}</div>
       </div>
-    <button type='submit' class= 'product__card__info-BTN'>AÑADIR AL CARRITO</button>
+    <button type='submit' class= 'product__card__info-BTN' data-name='${name}' data-img='${img}' data-price='${price}'>AÑADIR AL CARRITO</button>
   </div>
 </div>
   `;
@@ -60,7 +60,7 @@ const sizeOptionsHandler = (e) => {
   if (e.target.classList.contains("size__label")) {
     if (e.target.classList.contains("size__label-active")) return;
     const sizeSpans = [...e.target.parentNode.querySelectorAll(".size__label")];
-    console.log(sizeSpans);
+
     if (
       sizeSpans.some((span) => span.classList.contains("size__label-active"))
     ) {
@@ -74,4 +74,31 @@ const sizeOptionsHandler = (e) => {
   }
 };
 
-export { HomeCard, ProductCard, sizeOptionsHandler };
+const addToCart = (e) => {
+  e.preventDefault();
+  if (e.target.classList.contains("product__card__info-BTN")) {
+    const sizeLabel =
+      e.target.previousSibling.previousSibling.firstChild.nextSibling
+        .nextSibling.nextSibling;
+    const sizeOptions = [...sizeLabel.querySelectorAll(".size__label")];
+    console.log(sizeOptions);
+    if (
+      sizeOptions.some((span) => span.classList.contains("size__label-active"))
+    ) {
+      const activeSpan = sizeOptions.find((span) =>
+        span.classList.contains("size__label-active")
+      );
+      const cartProd = {
+        name: e.target.dataset.name,
+        img: e.target.dataset.img,
+        price: e.target.dataset.price,
+        size: activeSpan.textContent,
+      };
+      console.log(cartProd);
+      cart.push(cartProd);
+      localStorage.setItem("cart", JSON.stringify(cart));
+    }
+  }
+};
+
+export { HomeCard, ProductCard, sizeOptionsHandler, addToCart };
