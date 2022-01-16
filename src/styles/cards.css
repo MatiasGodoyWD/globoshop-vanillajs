@@ -198,6 +198,9 @@
   .product__card__info-BTN {
     width: 100%;
   }
+  .size__error-container {
+    margin-left: -3%;
+  }
   @media (min-width: 300px) and (max-width: 360px) {
     .size__label {
       padding: 0.5rem 0rem;
@@ -205,12 +208,30 @@
       width: 1.7rem;
       height: 1.7rem;
     }
+    .size__error-container {
+      margin-left: -4%;
+    }
+  }
+  @media (min-width: 600px) and (max-width: 700px) {
+    .size__error-container {
+      margin-left: -2%;
+    }
   }
   @media (min-width: 640px) and (max-width: 901px) {
     .product__card__info {
       width: 100%;
       padding: 1.5rem 2rem;
       border-radius: 0rem 0rem 0.5rem 0.5rem;
+    }
+    .size__error-container {
+      margin-left: -2%;
+    }
+  }
+  @media (min-width: 300px) and (max-width: 400px) {
+    .product__message {
+      font-size: 0.85rem;
+      text-align: center;
+      padding: 0rem 0.5rem;
     }
   }
 }

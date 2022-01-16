@@ -54,7 +54,7 @@ const ProductCard = (product) => {
         )
         .join("")}</div>
       </div>
-    <button type='submit' class= 'product__card__info-BTN' data-name='${name}' data-img='${img}' data-price='${price}'>AÑADIR AL CARRITO</button>
+    <button type='submit' class= 'product__card__info-BTN' data-category='${category}' data-name='${name}' data-img='${img}' data-price='${price}'>AÑADIR AL CARRITO</button>
   </div>
 </div>
   `;
@@ -80,6 +80,7 @@ const sizeOptionsHandler = (e) => {
 
 const addToCart = (sizeOptions, prod, sizeError) => {
   const bubble = document.querySelector(".navbar__cart__counter");
+  const successMsg = document.querySelector(".product__message");
   if (
     !sizeOptions.some((span) => span.classList.contains("size__label-active"))
   ) {
@@ -99,6 +100,7 @@ const addToCart = (sizeOptions, prod, sizeError) => {
     img: prod.dataset.img,
     price: prod.dataset.price,
     size: activeSpan.textContent,
+    category: prod.dataset.category,
     quantity: 1,
   };
   if (
@@ -132,6 +134,10 @@ const addToCart = (sizeOptions, prod, sizeError) => {
   localStorage.setItem("cart", JSON.stringify(cart));
   bubble.textContent = cart.quantity;
   bubble.classList.remove("navbar__cart__counter-inactive");
+  successMsg.style.display = "flex";
+  setTimeout(() => {
+    successMsg.style.display = "none";
+  }, 3000);
 };
 
 const addToCartHandler = (e) => {

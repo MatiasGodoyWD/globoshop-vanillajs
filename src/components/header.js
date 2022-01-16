@@ -29,7 +29,7 @@ const NavbarLink = (href, content) => {
 const myCart = JSON.parse(localStorage.getItem("cart")) || [];
 const bubbleQ = myCart.quantity || 0;
 
-const NavbarCartLink = (href, content, cartQ) => {
+const NavbarCartLink = (href, content) => {
   return `
    <a href="${href}" class="navbar__link" id='navbar__cart'>
     ${content}<div class='navbar__cart__counter ${

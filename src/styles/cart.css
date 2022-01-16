@@ -1,0 +1,113 @@
+.cart__section {
+  margin: 3rem;
+  width: 80%;
+  min-height: 50vh;
+  background-color: var(--primary-white);
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border-radius: 0.3rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+
+.cart__title {
+  width: 90%;
+  height: 5rem;
+  border-bottom: 1px solid rgba(126, 126, 126, 0.212);
+  color: var(--primary-black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+}
+
+.empty__cart__message {
+  width: 100%;
+  text-align: center;
+  padding: 2rem;
+  font-size: 1.2rem;
+}
+
+.empty__cart__message a {
+  color: var(--primary-red);
+  font-weight: 500;
+  text-decoration: underline;
+}
+
+.cart__grid {
+  width: 90%;
+  height: auto;
+  color: var(--primary-black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  flex-direction: column;
+  padding: 1rem 0rem;
+}
+
+.cart__product {
+  width: 100%;
+  height: 12rem;
+  /* padding: 1rem; */
+  display: flex;
+  align-items: center;
+  padding: 0rem 1rem;
+  justify-content: flex-start;
+  border-bottom: 1px solid rgba(126, 126, 126, 0.212);
+}
+.cart__product-info {
+  display: flex;
+  height: 60%;
+  width: 50%;
+  padding: 0rem 1.5rem;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.cart__product-data {
+  width: 100%;
+}
+
+.cart__product-img {
+  width: 7rem;
+  height: 70%;
+  border-radius: 0.3rem;
+}
+
+.cart__product-title {
+  font-size: 1.3rem;
+}
+
+.cart__product-size {
+  color: var(--secondary-gray);
+  font-size: 0.8rem;
+  padding-top: 0.4rem;
+  font-weight: 600;
+}
+
+.cart__product-actions {
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+  align-items: center;
+  height: 1rem;
+}
+
+.cart__product-btn {
+  outline: none;
+  padding: 0rem;
+  background: none;
+  border: 0px solid rgba(255, 255, 255, 0);
+  color: var(--primary-red);
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: var(--animation);
+  cursor: pointer;
+}
+
+.cart__product-btn:hover {
+  font-size: 0.87rem;
+  transition: var(--animation);
+}

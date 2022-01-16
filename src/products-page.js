@@ -9,16 +9,20 @@ import {
 } from "./components/header.js";
 import { FiltersSection, ProductGridSection } from "./components/sections.js";
 import { products } from "./products.js";
+import { SuccessMessage } from "./components/success-message.js";
 
 const root = document.querySelector(".root");
 
 const productsInit = (prods) => {
   root.innerHTML = `
+ 
 ${ProductsHeader()}
 <main>
 ${FiltersSection(prods)}
 ${ProductGridSection(prods)}
+
 </main> 
+${SuccessMessage()}
 `;
   const barsMenu = document.querySelector("#navbar__bars");
   const navbarMenu = document.querySelector(".navbar__menu");

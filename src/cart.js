@@ -5,6 +5,7 @@ import {
   categoriesRedirectionHandler,
   productsbarsMenuHandler,
 } from "./components/header.js";
+import { CartSection } from "./components/sections.js";
 
 const root = document.querySelector(".root");
 
@@ -18,8 +19,9 @@ localStorage.setItem("cart", JSON.stringify(cart));
 const cartInit = () => {
   root.innerHTML = `
 ${ProductsHeader()}
-<main>
 
+<main>
+${CartSection(cart)}
 </main>
 `;
   const barsMenu = document.querySelector("#navbar__bars");

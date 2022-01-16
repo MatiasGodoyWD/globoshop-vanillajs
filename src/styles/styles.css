@@ -8,12 +8,14 @@
 @import "subscribe.css";
 @import "footer.css";
 @import "products-page.css";
+@import "cart.css";
 
 :root {
   --primary-red: #ec1c24;
   --accent-red: #ff0004;
   --primary-white: #fff;
   --primary-gray: #3d3a3a;
+  --secondary-gray: #757575;
   --secondary-red: #be0404;
   --primary-black: #0b090a;
   --primary-text: "Lato", sans-serif;
@@ -34,6 +36,7 @@
   width: 100%;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 html {

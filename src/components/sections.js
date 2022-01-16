@@ -4,6 +4,7 @@ import { Form } from "./contact-form.js";
 import { FilterBar } from "./filter-bar.js";
 import { SubscribeComponent } from "./subscribe.js";
 import { HomeCard, ProductCard } from "./cards.js";
+import { CartProduct } from "./cart-product.js";
 
 const featuredProducts = products.filter((prod) => prod.featured);
 
@@ -88,6 +89,21 @@ const ProductGridSection = (activeProducts) => {
   `;
 };
 
+const CartSection = (cartProducts) => {
+  return `<div class='cart__section'>
+  <h2 class='cart__title'>Mi carrito</h2>
+  <div class='cart__grid'>
+  ${
+    cartProducts.products.length === 0
+      ? `<p class='empty__cart__message'>Tu carrito de compras está vacio. <a href='../../products.html'>¡Empezá a comprar ya mismo!</a></p>`
+      : cartProducts.products.map((prod) => CartProduct(prod)).join("")
+  }
+  
+  <div>
+  
+  </div>`;
+};
+
 export {
   FeaturedSection,
   CategoriesSection,
@@ -97,4 +113,5 @@ export {
   FiltersSection,
   ProductGridSection,
   renderizeProducts,
+  CartSection,
 };
