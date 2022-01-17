@@ -99,7 +99,7 @@ const CartSection = (cartProducts) => {
       : cartProducts.products.map((prod) => CartProduct(prod)).join("")
   }
   
-  <div>
+  </div>
   
   </div>`;
 };

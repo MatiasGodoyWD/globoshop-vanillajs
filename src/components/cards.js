@@ -96,6 +96,7 @@ const addToCart = (sizeOptions, prod, sizeError) => {
     span.classList.contains("size__label-active")
   );
   const cartProd = {
+    id: prod.dataset.name + activeSpan.textContent,
     name: prod.dataset.name,
     img: prod.dataset.img,
     price: prod.dataset.price,
@@ -103,33 +104,16 @@ const addToCart = (sizeOptions, prod, sizeError) => {
     category: prod.dataset.category,
     quantity: 1,
   };
-  if (
-    cart.products.some(
-      (prod) => prod.name === cartProd.name && prod.size === cartProd.size
-    )
-  ) {
-    let equalNameProds = cart.products.filter(
-      (prod) => prod.name === cartProd.name
-    );
-
-    const updatedProd = equalNameProds.find(
-      (prod) => prod.name === cartProd.name && prod.size === cartProd.size
-    );
-
-    equalNameProds = equalNameProds.filter(
-      (prod) => prod.name === cartProd.name && prod.size !== cartProd.size
-    );
-
-    updatedProd.quantity++;
-    equalNameProds.push(updatedProd);
-
-    cart.products = cart.products.filter((prod) => prod.name !== cartProd.name);
-    cart.products = [...cart.products, ...equalNameProds];
+  if (cart.products.some((prod) => prod.id === cartProd.id)) {
+    let updatedProduct = cart.products.find((prod) => prod.id === cartProd.id);
+    cart.products = cart.products.filter((prod) => prod.id !== cartProd.id);
+    updatedProduct.quantity++;
+    cart.products.push(updatedProduct);
   } else {
     cart.products.push(cartProd);
+    cart.quantity++;
   }
 
-  cart.quantity++;
   cart.total += Number(cartProd.price);
   localStorage.setItem("cart", JSON.stringify(cart));
   bubble.textContent = cart.quantity;

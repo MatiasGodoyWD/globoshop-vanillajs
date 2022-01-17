@@ -1,4 +1,5 @@
 import { ProductCard } from "./components/cards.js";
+import { quantityHandler } from "./components/cart-product.js";
 import {
   ProductsHeader,
   menuScrollHandler,
@@ -27,9 +28,11 @@ ${CartSection(cart)}
   const barsMenu = document.querySelector("#navbar__bars");
   const navbarMenu = document.querySelector(".navbar__menu");
   const navigationMenu = document.querySelector(".navbar__navigation");
+  const cartGrid = document.querySelector(".cart__grid");
   barsMenu.addEventListener("click", productsbarsMenuHandler);
   navigationMenu.addEventListener("click", categoriesRedirectionHandler);
   menuScrollHandler(barsMenu, navigationMenu, navbarMenu);
+  cartGrid.addEventListener("click", quantityHandler);
 };
 
 cartInit();
