@@ -42,7 +42,7 @@
 
 .navbar__link {
   color: var(--primary-red);
-  transition: var(--animation);
+  transition: 0.1s all linear;
 }
 
 .navbar__social {
@@ -53,7 +53,7 @@
 .navbar__link:hover,
 .navbar__social > i:hover {
   color: var(--accent-red);
-  transition: var(--animation);
+  transition: 0.1s all linear;
   transform: scale(1.05);
 }
 

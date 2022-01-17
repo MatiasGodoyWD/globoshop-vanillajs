@@ -12,7 +12,7 @@ const products = [
     id: 2,
     name: "Remera de salida negra",
     type: "remeras",
-    price: 6500,
+    price: 3500,
     img: "https://tienda.cahuracan.com/gd.php?img=archivos%2Fproductos%2F16345850138369_negra+2.jpg&width=500&height=560",
     category: "salida",
     featured: true,

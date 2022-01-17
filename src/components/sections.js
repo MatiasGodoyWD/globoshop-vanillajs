@@ -5,7 +5,6 @@ import { FilterBar } from "./filter-bar.js";
 import { SubscribeComponent } from "./subscribe.js";
 import { HomeCard, ProductCard } from "./cards.js";
 import { CartProduct } from "./cart-product.js";
-
 const featuredProducts = products.filter((prod) => prod.featured);
 
 const FeaturedSection = () => {
@@ -65,9 +64,9 @@ const redirectionHandler = (e) => {
 
 const FiltersSection = (activeProducts) => {
   return `
-  <div class='filter__section'> 
+  <section class='filter__section'> 
     ${FilterBar(activeProducts)}
-  </div>
+  </section>
   `;
 };
 
@@ -79,29 +78,41 @@ const renderizeProducts = (activeProducts) => {
 
 const ProductGridSection = (activeProducts) => {
   return `
-    <div class='product-grid__section' data-aos="fade-right">
+    <section class='product-grid__section' data-aos="fade-right">
     ${
       !activeProducts.length
         ? `<p class'empty__grid'>No existen productos que cumplan con los criterios seleccionados. Por favor, modifique sus criterios de selección.</p>`
         : renderizeProducts(activeProducts)
     }
-    </div>
+    </section>
   `;
 };
 
+const ShippingSection = () => {
+  return `<div class='cart__section' data-aos='fade-right'>
+    <h2 class='cart__title'>Datos de la compra</h2>
+   
+    </div>
+  
+    `;
+};
+
 const CartSection = (cartProducts) => {
-  return `<div class='cart__section'>
-  <h2 class='cart__title'>Mi carrito</h2>
+  return `<section class='cart__section' data-aos='fade-right'>
+  <h2 class='cart__title'>Carrito de compras</h2>
   <div class='cart__grid'>
   ${
     cartProducts.products.length === 0
       ? `<p class='empty__cart__message'>Tu carrito de compras está vacio. <a href='../../products.html'>¡Empezá a comprar ya mismo!</a></p>`
       : cartProducts.products.map((prod) => CartProduct(prod)).join("")
   }
-  
+  <div class='cart__total' data-aos='fade-right'><span class='cart__total-tag'>Total:</span><span class='cart__total-price'>$${
+    cartProducts.total
+  }</span></div>
+  <div class='cart__button-container' data-aos='fade-right'><button class='cart__button' type='submit'>Continuar compra</button></div>
   </div>
-  
-  </div>`;
+
+  </section>`;
 };
 
 export {
@@ -113,5 +124,6 @@ export {
   FiltersSection,
   ProductGridSection,
   renderizeProducts,
+  ShippingSection,
   CartSection,
 };

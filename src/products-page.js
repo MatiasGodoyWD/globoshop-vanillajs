@@ -2,7 +2,6 @@ import { addToCartHandler, sizeOptionsHandler } from "./components/cards.js";
 import { filterHandler, filterMenuHandler } from "./components/filter-bar.js";
 import {
   ProductsHeader,
-  barsMenuHandler,
   menuScrollHandler,
   categoriesRedirectionHandler,
   productsbarsMenuHandler,
@@ -10,6 +9,7 @@ import {
 import { FiltersSection, ProductGridSection } from "./components/sections.js";
 import { products } from "./products.js";
 import { SuccessMessage } from "./components/success-message.js";
+import { Footer } from "./components/footer.js";
 
 const root = document.querySelector(".root");
 
@@ -23,12 +23,12 @@ ${ProductGridSection(prods)}
 
 </main> 
 ${SuccessMessage()}
+${Footer()}
 `;
   const barsMenu = document.querySelector("#navbar__bars");
   const navbarMenu = document.querySelector(".navbar__menu");
   const navigationMenu = document.querySelector(".navbar__navigation");
   const prodGrid = document.querySelector(".product-grid__section");
-  const prodCardBTN = document.querySelector(".product__card__info-BTN");
 
   const orderSelect = document.querySelector("#order__select");
   const elementSelect = document.querySelector("#element__select");

@@ -146,8 +146,10 @@ const productsbarsMenuHandler = (event) => {
   const navigation = document.querySelector(".navbar__navigation");
   barsMenu.classList.toggle("fa-times");
   navigation.classList.toggle("navbar__active");
-  filterMenu.classList.remove("filter__tab-active");
-  filterOptions.classList.remove("filter__options-active");
+  if (filterMenu !== null) {
+    filterMenu.classList.remove("filter__tab-active");
+    filterOptions.classList.remove("filter__options-active");
+  }
 };
 
 const menuScrollHandler = (barsMenu, navigationMenu, landingNavbarMenu) => {

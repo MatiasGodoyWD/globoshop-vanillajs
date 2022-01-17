@@ -114,7 +114,7 @@ const addToCart = (sizeOptions, prod, sizeError) => {
     cart.quantity++;
   }
 
-  cart.total += Number(cartProd.price);
+  cart.total += Number(cartProd.price) * Number(cartProd.quantity);
   localStorage.setItem("cart", JSON.stringify(cart));
   bubble.textContent = cart.quantity;
   bubble.classList.remove("navbar__cart__counter-inactive");
