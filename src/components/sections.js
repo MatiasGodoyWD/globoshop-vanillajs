@@ -88,15 +88,6 @@ const ProductGridSection = (activeProducts) => {
   `;
 };
 
-const ShippingSection = () => {
-  return `<div class='cart__section' data-aos='fade-right'>
-    <h2 class='cart__title'>Datos de la compra</h2>
-   
-    </div>
-  
-    `;
-};
-
 const CartSection = (cartProducts) => {
   return `<section class='cart__section' data-aos='fade-right'>
   <h2 class='cart__title'>Carrito de compras</h2>
@@ -113,6 +104,15 @@ const CartSection = (cartProducts) => {
   </div>
 
   </section>`;
+};
+
+const ShippingSection = () => {
+  return `<div class='cart__section' data-aos='fade-right'>
+    <h2 class='cart__title'>Datos de la compra</h2>
+   
+    </div>
+  
+    `;
 };
 
 export {
