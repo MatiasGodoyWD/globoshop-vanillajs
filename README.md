@@ -16,6 +16,7 @@
 
 - SwiperJs: Para la creación de los sliders.
 - AOS: Para los efectos de scrolling
+- EmailJS: Para el envio de mails post Checkout
 
 # Link para preview
 
