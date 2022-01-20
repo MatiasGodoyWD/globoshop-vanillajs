@@ -21,7 +21,7 @@ const shippingInit = () => {
   root.innerHTML = `
 ${ProductsHeader()}
 <main>
-${ShippingSection()}
+${ShippingSection(cart)}
 </main>
 ${Footer()}
 `;

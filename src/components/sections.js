@@ -5,6 +5,7 @@ import { FilterBar } from "./filter-bar.js";
 import { SubscribeComponent } from "./subscribe.js";
 import { HomeCard, ProductCard } from "./cards.js";
 import { CartProduct } from "./cart-product.js";
+import { ProductsTable } from "./table.js";
 const featuredProducts = products.filter((prod) => prod.featured);
 
 const FeaturedSection = () => {
@@ -106,10 +107,10 @@ const CartSection = (cartProducts) => {
   </section>`;
 };
 
-const ShippingSection = () => {
+const ShippingSection = (cartProds) => {
   return `<div class='cart__section' data-aos='fade-right'>
     <h2 class='cart__title'>Datos de la compra</h2>
-   
+    ${ProductsTable(cartProds)}
     </div>
   
     `;
