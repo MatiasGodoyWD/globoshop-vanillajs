@@ -32,7 +32,10 @@ const ProductsTable = (cartProds) => {
                         Subtotal        
                       </td>
                       <td>
-      
+                          ${cartProds.products.reduce(
+                            (a, b) => (a += b.quantity),
+                            0
+                          )}
                       </td>
                       <td>
                           $${cartProds.total}        
@@ -54,7 +57,10 @@ const ProductsTable = (cartProds) => {
                              Total   
                       </td>
                       <td>
-      
+                      ${cartProds.products.reduce(
+                        (a, b) => (a += b.quantity),
+                        0
+                      )}
                       </td>
                       <td>
                           $${cartProds.total + 500}        

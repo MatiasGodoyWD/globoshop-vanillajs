@@ -1,0 +1,126 @@
+.table__container {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  overflow-x: auto;
+
+  padding: 2rem 0rem;
+}
+table {
+  /* width: auto; */
+  font-family: var(--secondary-text);
+  border-collapse: collapse;
+}
+
+td,
+th {
+  text-align: center;
+  width: 30%;
+  padding: 0.5rem;
+}
+
+th {
+  font-size: 1rem;
+  font-weight: 800;
+  border-bottom: 1px solid rgba(126, 126, 126, 0.212);
+}
+
+td {
+  font-size: 0.9rem;
+  font-weight: 400;
+  padding: 1rem 0rem;
+}
+
+.table__subtotal {
+  border-top: 1px solid rgba(126, 126, 126, 0.082);
+}
+
+.table__total td {
+  border-top: 1px solid rgba(126, 126, 126, 0.212);
+
+  font-weight: 800;
+}
+
+.shipping__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.form__personal-data {
+  width: 60%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 3rem 0rem 1rem 0rem;
+}
+
+.form__error {
+  background-color: red;
+  height: 1rem;
+  padding: 1rem;
+  visibility: hidden;
+}
+
+.shipping__type,
+.shipping__payment {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0rem;
+  border: 1px solid rgba(126, 126, 126, 0.212);
+  border-left: 0.3rem solid var(--primary-red);
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  margin: 1rem 0rem;
+}
+
+.shipping__option {
+  width: 100%;
+  padding: 0rem 1rem;
+}
+.form__label-black {
+  font-weight: 400;
+  padding-bottom: 0.5rem;
+  font-family: var(--secondary-text);
+  font-size: 1rem;
+  align-self: flex-start;
+  color: var(--primary-black);
+}
+.shipping__info {
+  font-size: 1rem;
+  width: 100%;
+  font-weight: 300;
+  padding: 0.3rem 2rem;
+}
+
+.shipping__button-container {
+  font-size: 1.5rem;
+  width: 60%;
+  display: flex;
+  padding: 1rem 0rem;
+  justify-content: flex-end;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 300px) and (max-width: 640px) {
+  .form__personal-data,
+  .shipping__type,
+  .shipping__payment,
+  .shipping__button-container,
+  .table__container {
+    width: 80%;
+  }
+  .shipping__button-container {
+    justify-content: center;
+    padding: 1rem 2rem;
+  }
+  @media (min-width: 300px) and (max-width: 360px) {
+    .shipping__button-container {
+      padding: 1rem 1rem;
+    }
+  }
+}

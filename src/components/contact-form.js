@@ -1,7 +1,7 @@
-const FormInput = (id, label) => {
+const FormInput = (id, label, className) => {
   return `
     <div class="form-control">
-    <label for="${id}" class="form__label">${label}:</label>
+    <label for="${id}" class="${className}">${label}:</label>
     <input
       type="text"
       id="${id}"
@@ -31,8 +31,8 @@ const Form = () => {
   <form class="contact__form" name="contact">
   <h2 class='form__title'>Contacto</h2>
   <div class='form__section-data'>
-  ${FormInput("form__email", "E-mail")}
-  ${FormInput("form__name", "Nombre completo")}
+  ${FormInput("form__email", "E-mail", "form__label")}
+  ${FormInput("form__name", "Nombre completo", "form__label")}
   </div>
 
   <div class='form__section-message'>
@@ -124,4 +124,5 @@ export {
   mailRegex,
   isValidEmail,
   showSuccessMessage,
+  resetInput,
 };

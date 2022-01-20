@@ -245,6 +245,9 @@
   .cart__button-container {
     justify-content: center;
   }
+  .cart__button {
+    width: 100%;
+  }
   @media (min-width: 600px) and (max-width: 901px) {
     .cart__product-img {
       width: 10%;

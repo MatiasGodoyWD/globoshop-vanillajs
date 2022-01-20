@@ -9,6 +9,7 @@
 @import "footer.css";
 @import "products-page.css";
 @import "cart.css";
+@import "shipping.css";
 
 :root {
   --primary-red: #ec1c24;
@@ -73,46 +74,4 @@ button:hover,
 .slider__section__button:hover {
   transition: var(--animation);
   background-color: #cc0219;
-}
-
-.table__container {
-  display: flex;
-  flex-direction: column;
-  width: 60%;
-  overflow-x: auto;
-
-  padding: 2rem;
-}
-table {
-  /* width: auto; */
-  font-family: var(--primary-text);
-  border-collapse: collapse;
-}
-
-td,
-th {
-  text-align: center;
-  width: 30%;
-  padding: 0.5rem;
-}
-
-th {
-  font-size: 1rem;
-  font-weight: 800;
-  border-bottom: 1px solid rgba(126, 126, 126, 0.212);
-}
-
-td {
-  font-size: 0.9rem;
-  font-weight: 300;
-  padding: 1rem 0rem;
-}
-
-.table__subtotal {
-  border-top: 1px solid rgba(126, 126, 126, 0.082);
-}
-
-.table__total td {
-  border-top: 1px solid rgba(126, 126, 126, 0.212);
-  font-weight: 800;
 }
