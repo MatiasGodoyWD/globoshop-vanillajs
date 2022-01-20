@@ -1,3 +1,4 @@
+import { products } from "../products.js";
 import { FormInput, isValidEmail } from "./contact-form.js";
 import { ProductsTable } from "./table.js";
 
@@ -80,6 +81,7 @@ const shippingSubmitHandler = (e) => {
   const emailInput = shippingForm.querySelector("#shipping__email");
   const directionInput = shippingForm.querySelector("#shipping__direction");
   const successMsg = document.querySelector(".shipping__message");
+  const prodTable = document.querySelector(".table__container");
 
   if (!isValidInfo(nameInput, surnameInput, emailInput, directionInput)) {
     showInputError(nameInput);
@@ -92,6 +94,24 @@ const shippingSubmitHandler = (e) => {
   const inputs = [nameInput, surnameInput, emailInput, directionInput];
 
   inputs.forEach((input) => InputSuccess(input));
+
+  let templateParams = {
+    name: nameInput.value,
+    surname: surnameInput.value,
+    email: emailInput.value,
+    subject: "NO-REPLY- ¡GRACIAS POR COMPRAR EN GLOBOSHOP!",
+    table: prodTable.innerHTML,
+    direction: directionInput.value,
+  };
+
+  emailjs.send("service_jvwfmee", "template_oaimtok", templateParams).then(
+    function (response) {
+      console.log("SUCCESS!", response.status, response.text);
+    },
+    function (error) {
+      console.log("FAILED...", error);
+    }
+  );
 
   successMsg.style.display = "flex";
   setTimeout(() => {

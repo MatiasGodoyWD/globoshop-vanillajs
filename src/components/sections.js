@@ -99,10 +99,13 @@ const CartSection = (cartProducts) => {
       ? `<p class='empty__cart__message'>Tu carrito de compras está vacio. <a href='../../products.html'>¡Empezá a comprar ya mismo!</a></p>`
       : cartProducts.products.map((prod) => CartProduct(prod)).join("")
   }
-  <div class='cart__total' data-aos='fade-right'><span class='cart__total-tag'>Total:</span><span class='cart__total-price'>$${
-    cartProducts.total
-  }</span></div>
-  <div class='cart__button-container' data-aos='fade-right'><button class='cart__button' type='submit'>Continuar compra</button></div>
+  ${
+    cartProducts.products.length !== 0
+      ? `  <div class='cart__total' data-aos='fade-right'><span class='cart__total-tag'>Total:</span><span class='cart__total-price'>$${cartProducts.total}</span></div>
+  <div class='cart__button-container' data-aos='fade-right'><button class='cart__button' type='submit'>Continuar compra</button></div>`
+      : ""
+  }
+
   </div>
 
   </section>`;

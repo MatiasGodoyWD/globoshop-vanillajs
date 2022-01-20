@@ -34,11 +34,14 @@ ${Footer()}
   barsMenu.addEventListener("click", productsbarsMenuHandler);
   navigationMenu.addEventListener("click", categoriesRedirectionHandler);
   menuScrollHandler(barsMenu, navigationMenu, navbarMenu);
+
   cartGrid.addEventListener("click", quantityHandler);
-  buyBtn.addEventListener("click", (e) => {
-    e.preventDefault();
-    window.location.href = `../shipping.html`;
-  });
+  if (buyBtn !== null) {
+    buyBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      window.location.href = `../shipping.html`;
+    });
+  }
 };
 
 cartInit();
