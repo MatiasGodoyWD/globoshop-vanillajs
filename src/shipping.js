@@ -4,9 +4,12 @@ import {
   menuScrollHandler,
   categoriesRedirectionHandler,
   productsbarsMenuHandler,
+  ShippingHeader,
 } from "./components/header.js";
 import { ShippingSection } from "./components/sections.js";
 import { Footer } from "./components/footer.js";
+import { shippingSubmitHandler } from "./components/shipping-form.js";
+import { ShippingSuccess } from "./components/success-message.js";
 
 const root = document.querySelector(".root");
 
@@ -19,18 +22,17 @@ localStorage.setItem("cart", JSON.stringify(cart));
 
 const shippingInit = () => {
   root.innerHTML = `
-${ProductsHeader()}
+  ${ShippingSuccess()}
+${ShippingHeader()}
 <main>
 ${ShippingSection(cart)}
 </main>
 ${Footer()}
+  
 `;
-  const barsMenu = document.querySelector("#navbar__bars");
-  const navbarMenu = document.querySelector(".navbar__menu");
-  const navigationMenu = document.querySelector(".navbar__navigation");
-  barsMenu.addEventListener("click", productsbarsMenuHandler);
-  navigationMenu.addEventListener("click", categoriesRedirectionHandler);
-  menuScrollHandler(barsMenu, navigationMenu, navbarMenu);
+
+  const submitBtn = document.querySelector(".cart__button");
+  submitBtn.addEventListener("click", shippingSubmitHandler);
 };
 
 shippingInit();

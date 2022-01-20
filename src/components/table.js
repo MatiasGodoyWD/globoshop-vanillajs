@@ -13,7 +13,7 @@ const ProductsTable = (cartProds) => {
                         return `
                         <tr>
                             <td>
-                                ${prod.name}        
+                                ${prod.name}(${prod.size})       
                             </td>
                             <td>
                                 ${prod.quantity}        

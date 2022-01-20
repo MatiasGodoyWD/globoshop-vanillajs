@@ -132,6 +132,12 @@ const ProductsHeader = () => {
     .join("")}</div>`;
 };
 
+const ShippingHeader = () => {
+  return `<div class='shipping__header' id='Shipping__header' data-aos='fade-right'>
+  ${Navbar("logo__navbar", logoNavbarItems)}
+  </div>`;
+};
+
 const barsMenuHandler = (event) => {
   const barsMenu = document.querySelector("#navbar__bars");
   const navigation = document.querySelector(".navbar__navigation");
@@ -186,4 +192,5 @@ export {
   ProductsHeader,
   categoriesRedirectionHandler,
   productsbarsMenuHandler,
+  ShippingHeader,
 };

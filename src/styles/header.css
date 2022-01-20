@@ -8,6 +8,16 @@
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
+.shipping__header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 5rem;
+  background-color: var(--primary-white);
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
 .logo__navbar {
   background-color: var(--primary-white);
   display: flex;
