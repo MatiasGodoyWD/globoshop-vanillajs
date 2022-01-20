@@ -7,6 +7,7 @@
   border-bottom: 0.1rem solid rgba(109, 109, 109, 0.096);
   height: 10rem;
   padding: 2rem;
+  z-index: 1200;
 }
 .filter__options {
   width: 100%;
@@ -68,7 +69,7 @@
   grid-auto-rows: auto;
   padding: 2rem 0rem;
   row-gap: 2rem;
-  /* background: red; */
+  min-height: 40vh;
 }
 .product-grid__section-empty {
   display: flex;
@@ -100,6 +101,7 @@
   .product-grid__section {
     width: 100%;
     grid-auto-columns: 80%;
+    min-height: 50vh;
   }
   .filter__section {
     width: 100%;
