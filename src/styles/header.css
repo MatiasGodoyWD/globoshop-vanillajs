@@ -73,6 +73,7 @@
 
 #products__header .navbar__navigation {
   width: 55%;
+  z-index: 1202;
 }
 
 .navbar__logo,

@@ -61,7 +61,7 @@ const logoNavbarItems = [
 const landingNavbarMenu = [
   BarsMenu(),
   NavbarItems("navbar__navigation", [
-    NavbarLink("#header", "Home"),
+    NavbarLink("#landing__header", "Home"),
     NavbarLink("#featured__section", "Destacados"),
     NavbarLink("#categories__section", "Categorias"),
     NavbarLink("#contact__section", "Contacto"),
@@ -138,7 +138,7 @@ const ShippingHeader = () => {
   </div>`;
 };
 
-const barsMenuHandler = (event) => {
+const barsMenuHandler = () => {
   const barsMenu = document.querySelector("#navbar__bars");
   const navigation = document.querySelector(".navbar__navigation");
   barsMenu.classList.toggle("fa-times");
