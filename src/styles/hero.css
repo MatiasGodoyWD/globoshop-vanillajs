@@ -1,11 +1,12 @@
 .hero {
   width: 100%;
-  background-image: url(https://i.ibb.co/DVBVt4H/hero.jpg);
+  background-image: url(https://i.ibb.co/5cFg1F0/hero2-1.png);
   display: flex;
   align-items: flex-end;
   height: 25rem;
   background-position-x: center;
-  background-size: cover;
+  background-size: auto;
+  background-repeat: no-repeat;
 }
 
 .hero__title {
@@ -26,9 +27,13 @@
       text-align: center;
     }
   }
-  .hero {
-    background-image: url(https://i.ibb.co/KjxBrSs/hero-mobile.jpg);
+  @media (min-width: 300px) and (max-width: 550px) {
+    .hero {
+      background-image: url(https://i.ibb.co/7n0ppNc/mobile-hero-1.png);
+      background-size: cover;
+    }
   }
+
   .hero__title {
     font-size: 0.39rem;
     padding: 0.5rem;
