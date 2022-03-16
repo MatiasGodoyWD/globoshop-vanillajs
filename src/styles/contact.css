@@ -67,7 +67,7 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  padding: 1rem 0rem;
+  padding: 0rem 0rem 1rem 0rem;
 }
 
 .form__textarea {
@@ -145,9 +145,6 @@
     width: 100%;
   }
 
-  #form__email {
-    margin-bottom: 1rem;
-  }
   @media (min-width: 300px) and (max-width: 360px) {
     .form__title {
       font-size: 1.7rem;
