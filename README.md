@@ -1,23 +1,15 @@
 # GLOBOSHOP
 
-## Detalles del proyecto
 
-    E-commerce realizado como proyecto final del modulo de Javascript para el curso de desarrollo Fullstack de nucba.
+<p> :grey_question: E-commerce web realizado como proyecto final del modulo de Javascript para la carrera agil de Desarrollo Web Fullstack de Nucba. Actualmente me encuentro realizando la migración de la misma a ReactJs. </p>
 
-    El mismo consiste en el uso del localstorage para almacenar los productos en un carrito y realizar la compra de los mismos.
+<p> 💻 Proyecto construido con HTML,CSS y Javascript</p>
 
-## Tecnologías utilizadas
+<p> :bookmark_tabs: He utilizado las librerias SwiperJs para los sliders, AOS para efectos on scroll e EmailJs para el envio de mails con el detalle de compra.</p>
 
-- Html
-- Css
-- Javascript
+### Contactame en:
 
-## Librerias utilizadas
+<p> https://www.linkedin.com/in/matiasgodoywd/ </p>
 
-- SwiperJs: Para la creación de los sliders.
-- AOS: Para los efectos de scrolling
-- EmailJS: Para el envio de mails post Checkout
 
-# Link para preview
 
-    https://globoshop.vercel.app/
